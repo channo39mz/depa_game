@@ -34,7 +34,7 @@ public class AttackManager : MonoBehaviour
     private bool hasTarget()
     {
         GameObject target = range.SelectTarget();
-        if (target != null) return true;
+        if (target != null && target.activeInHierarchy) return true;
         return false;
     }
 }
