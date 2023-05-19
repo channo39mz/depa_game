@@ -4,17 +4,17 @@ using UnityEngine;
 
 public class Health : MonoBehaviour
 {
-    [SerializeField] private int MaxHP = 10;
-    public int HP { get; private set; }
+    [SerializeField] private float MaxHP;
+    public float HP { get; private set; }
 
     private void Start()
     {
         HP = MaxHP;
     }
 
-    public void decreaseHP(int amount)
+    public void decreaseHP(float amount)
     {
-        int tmpHP = HP;
+        float tmpHP = HP;
         tmpHP -= amount;
 
         if (tmpHP <= 0)
@@ -34,7 +34,7 @@ public class Health : MonoBehaviour
         Debug.Log(name + " was died");
     }
 
-    public int getMaxHP(){
+    public float getMaxHP(){
         return MaxHP;
     }
 }
