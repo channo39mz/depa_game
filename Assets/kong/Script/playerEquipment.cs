@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class playerEquipment : MonoBehaviour
 {
-    public Player hero;
     public Weapon curWeapon;
     public GameObject heroWeapon;
     private Vector3 worldPosition;

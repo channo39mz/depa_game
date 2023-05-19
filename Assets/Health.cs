@@ -6,7 +6,7 @@ public class Health : MonoBehaviour
 {
     [SerializeField] private int MaxHP = 10;
     public int HP { get; private set; }
-    // Start is called before the first frame update
+
     private void Start()
     {
         HP = MaxHP;
@@ -16,6 +16,7 @@ public class Health : MonoBehaviour
     {
         int tmpHP = HP;
         tmpHP -= amount;
+
         if (tmpHP <= 0)
         {
             HP = 0;
@@ -31,5 +32,9 @@ public class Health : MonoBehaviour
     {
         gameObject.SetActive(false);
         Debug.Log(name + " was died");
+    }
+
+    public int getMaxHP(){
+        return MaxHP;
     }
 }
