@@ -9,8 +9,8 @@ namespace Scripts
 
         EnemyCollection()
         {
-            enemies.Add(new Krasue());
-            enemies.Add(new Kongkoi());
+            // enemies.Add(new Krasue());
+            // enemies.Add(new Kongkoi());
         }
     }
 }
