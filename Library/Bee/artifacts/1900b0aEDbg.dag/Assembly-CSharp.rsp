@@ -382,6 +382,7 @@
 "Assets/EnemyMovement.cs"
 "Assets/Health.cs"
 "Assets/kong/Script/CastSkill.cs"
+"Assets/kong/Script/DeleteInOneSec.cs"
 "Assets/kong/Script/DynamicHealth.cs"
 "Assets/kong/Script/DynamicMana.cs"
 "Assets/kong/Script/Enemy.cs"
@@ -392,11 +393,13 @@
 "Assets/kong/Script/PlayerAim.cs"
 "Assets/kong/Script/PlayerCastSkill.cs"
 "Assets/kong/Script/playerMove.cs"
+"Assets/kong/Script/PopUpDamage.cs"
 "Assets/kong/Script/Skill.cs"
 "Assets/kong/Script/SpellBullet.cs"
 "Assets/kong/Script/Spin.cs"
 "Assets/kong/Script/TakeDamage.cs"
 "Assets/kong/Script/Weapon.cs"
+"Assets/kong/Script/WeaponAttack.cs"
 "Assets/Loot.cs"
 -langversion:9.0
 
