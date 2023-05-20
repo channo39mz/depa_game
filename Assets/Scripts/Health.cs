@@ -12,13 +12,6 @@ public class Health : MonoBehaviour
         HP = MaxHP;
     }
 
-    private void Update() {
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            decreaseHP(5);
-        }
-    }
-
     public void decreaseHP(float amount)
     {
         ShowDamage(amount.ToString());
