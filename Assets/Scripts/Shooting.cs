@@ -7,6 +7,7 @@ public class Shooting : MonoBehaviour
     [SerializeField] private GameObject bulletPrefab;
     [SerializeField] private Transform firePoint;
     [SerializeField] private float bulletForce = 20;
+    [SerializeField] public bool enable = false;
     private AttackCoolDown coolDown;
 
     private void Start() {
@@ -15,7 +16,7 @@ public class Shooting : MonoBehaviour
 
     private void Update() {
         Aiming aiming = GetComponent<Aiming>();
-        if (coolDown.Ready && aiming.HasTarget)
+        if (enable && coolDown.Ready && aiming.HasTarget)
         {
             Shoot();
             coolDown.DoAttack();
