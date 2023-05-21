@@ -28,10 +28,10 @@ public class Bullet : MonoBehaviour
     private void Hit(Collider2D other)
     {
         Destroy(gameObject);
-        Damageable damageable = other.gameObject.GetComponent<Damageable>();
-        damageable.TakeDamage(damage);
-        GameObject effect = Instantiate(hitEffect, transform.position, Quaternion.identity);
-        Destroy(effect, 0.5f);
-        Debug.Log("Hit");
+        DamageManager manager = other.gameObject.GetComponent<DamageManager>();
+        manager.TakeDamage(damage);
+        // GameObject effect = Instantiate(hitEffect, transform.position, Quaternion.identity);
+        // Destroy(effect, 0.5f);
+        // Debug.Log("Hit");
     }
 }

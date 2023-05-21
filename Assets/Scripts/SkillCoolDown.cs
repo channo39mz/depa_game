@@ -2,45 +2,43 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class AttackCoolDown : MonoBehaviour
+public class SkillCoolDown : MonoBehaviour
 {
-    [SerializeField] private float AtkCD = 1;
-    public float CD { get; private set; }
+    [SerializeField] private float maxCoolDown = 1;
+    private float coolDown;
     public bool Ready { get; private set; } = true;
 
-    // Start is called before the first frame update
-    void Start()
+    private void Start()
     {
-        CD = 0;
+        coolDown = 0;
     }
 
-    // Update is called once per frame
-    void Update()
+    private void Update()
     {
         reduceCoolDown(Time.deltaTime);
     }
 
     public void reduceCoolDown(float time)
     {
-        float tmpCD = CD;
+        float tmpCD = coolDown;
         tmpCD -= time;
         if (tmpCD <= 0)
         {
-            CD = 0;
+            coolDown = 0;
             Ready = true;
         }
         else
         {
-            CD = tmpCD;
+            coolDown = tmpCD;
             Ready = false;
         }
     }
 
-    public void DoAttack()
+    public void Use()
     {
         if (Ready) 
         {
-            CD = AtkCD;
+            coolDown = maxCoolDown;
         }
     }
 }

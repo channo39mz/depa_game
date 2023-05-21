@@ -7,19 +7,19 @@ public class Shooting : MonoBehaviour
     [SerializeField] private GameObject bulletPrefab;
     [SerializeField] private Transform firePoint;
     [SerializeField] private float bulletForce = 5;
-    private AttackCoolDown coolDown;
+    private SkillCoolDown skill;
 
     private void Start() {
-        coolDown = GetComponentInParent<AttackCoolDown>();
+        skill = GetComponent<SkillCoolDown>();
         
     }
 
     private void Update() {
         EnemyAiming aiming = GetComponent<EnemyAiming>();
-        if (coolDown.Ready && aiming.HasTarget)
+        if (skill.Ready && aiming.HasTarget)
         {
             Shoot();
-            coolDown.DoAttack();
+            skill.Use();
         }
     }
 
