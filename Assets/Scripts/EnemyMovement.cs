@@ -15,9 +15,12 @@ public class EnemyMovement : MonoBehaviour
         skillRange = collider[1].radius;
     }
 
-    private void Update()
+    private void FixedUpdate()
     {
-        if (tracking.HasTarget) Track();
+        if (tracking.HasTarget)
+        {
+            Track();
+        }
     }
 
     private void Track()
@@ -29,7 +32,7 @@ public class EnemyMovement : MonoBehaviour
             Vector2 movement = target.position - transform.position;
             movement.x /= Mathf.Abs(movement.x);
             movement.y /= Mathf.Abs(movement.y);
-            transform.Translate(movement * Time.deltaTime * Speed);
+            transform.Translate(movement * Time.fixedDeltaTime * Speed);
         }
     }
 }

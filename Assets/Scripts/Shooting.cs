@@ -2,24 +2,18 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Shooting : MonoBehaviour
+public class Shooting : SkillCD
 {
     [SerializeField] private GameObject bulletPrefab;
     [SerializeField] private Transform firePoint;
     [SerializeField] private float bulletForce = 5;
-    private SkillCoolDown skill;
-
-    private void Start()
-    {
-        skill = GetComponent<SkillCoolDown>();
-    }
 
     private void Update() {
         EnemyAiming aiming = GetComponent<EnemyAiming>();
-        if (skill.Ready && aiming.HasTarget)
+        if (Ready && aiming.HasTarget)
         {
             Shoot();
-            skill.Use();
+            Use();
         }
     }
 
