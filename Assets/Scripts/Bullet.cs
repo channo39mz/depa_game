@@ -9,7 +9,7 @@ public class Bullet : MonoBehaviour
     [SerializeField] private bool hitEnemy = true;
     [HideInInspector] public float damage;
 
-    void Update()
+    private void Update()
     {
         Destroy(gameObject, 2f);
     }
@@ -30,8 +30,7 @@ public class Bullet : MonoBehaviour
         Destroy(gameObject);
         DamageManager manager = other.gameObject.GetComponent<DamageManager>();
         manager.TakeDamage(damage);
-        // GameObject effect = Instantiate(hitEffect, transform.position, Quaternion.identity);
-        // Destroy(effect, 0.5f);
-        // Debug.Log("Hit");
+        GameObject effect = Instantiate(hitEffect, transform.position, Quaternion.identity);
+        Destroy(effect, 0.5f);
     }
 }

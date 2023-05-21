@@ -9,9 +9,9 @@ public class Shooting : MonoBehaviour
     [SerializeField] private float bulletForce = 5;
     private SkillCoolDown skill;
 
-    private void Start() {
+    private void Start()
+    {
         skill = GetComponent<SkillCoolDown>();
-        
     }
 
     private void Update() {

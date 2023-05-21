@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2541666758259618876}
   - component: {fileID: 2541666758259618879}
+  - component: {fileID: 2541666758259618878}
   - component: {fileID: 2541666758259618877}
   m_Layer: 0
   m_Name: Melee
@@ -48,7 +49,20 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 1.7
+  m_Radius: 1
+--- !u!114 &2541666758259618878
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2541666758259618867}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: de4fc917459312c42abe7bf73fd0b434, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxCoolDown: 1
 --- !u!114 &2541666758259618877
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -61,4 +75,3 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f796579d83b6b8a43806121d233de284, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxCD: 1

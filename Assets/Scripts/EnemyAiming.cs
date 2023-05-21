@@ -6,7 +6,8 @@ public class EnemyAiming : MonoBehaviour
 {
     private GameObject target;
     public bool HasTarget { get; private set; }
-    private void Update() {
+    private void Update()
+    {
         if (HasTarget)
         {
             Rigidbody2D rb = GetComponent<Rigidbody2D>();
@@ -16,7 +17,8 @@ public class EnemyAiming : MonoBehaviour
         }
     }
 
-    private void OnTriggerStay2D(Collider2D other) {
+    private void OnTriggerStay2D(Collider2D other)
+    {
         if (other.tag == "Player")
         {
             target = other.gameObject;
