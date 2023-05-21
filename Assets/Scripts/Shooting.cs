@@ -6,7 +6,7 @@ public class Shooting : MonoBehaviour
 {
     [SerializeField] private GameObject bulletPrefab;
     [SerializeField] private Transform firePoint;
-    [SerializeField] private float bulletForce = 20;
+    [SerializeField] private float bulletForce = 5;
     [SerializeField] public bool enable = false;
     private AttackCoolDown coolDown;
 
