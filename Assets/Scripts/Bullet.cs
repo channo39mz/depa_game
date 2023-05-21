@@ -7,9 +7,9 @@ public class Bullet : MonoBehaviour
     [SerializeField] private GameObject hitEffect;
     [SerializeField] private bool hitPlayer = true;
     [SerializeField] private bool hitEnemy = true;
-    [HideInInspector] public float damage;
+    [HideInInspector] public GameObject owner;
 
-    private void Update()
+    void Update()
     {
         Destroy(gameObject, 2f);
     }
@@ -28,9 +28,11 @@ public class Bullet : MonoBehaviour
     private void Hit(Collider2D other)
     {
         Destroy(gameObject);
-        DamageManager manager = other.gameObject.GetComponent<DamageManager>();
-        manager.TakeDamage(damage);
+        Damageable damageable = other.gameObject.GetComponent<Damageable>();
+        AttackPower power = owner.GetComponent<AttackPower>();
+        damageable.TakeDamage(power.Atk);
         GameObject effect = Instantiate(hitEffect, transform.position, Quaternion.identity);
         Destroy(effect, 0.5f);
+        Debug.Log("Hit");
     }
 }

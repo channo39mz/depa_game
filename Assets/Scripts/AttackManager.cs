@@ -16,7 +16,7 @@ public class AttackManager : MonoBehaviour
     }
 
     private void Update() {
-        if (coolDown.ready && hasTarget())
+        if (coolDown.Ready && hasTarget())
         {
             Attack();
         }

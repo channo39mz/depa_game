@@ -6,7 +6,7 @@ public class AttackCoolDown : MonoBehaviour
 {
     [SerializeField] private float AtkCD = 1;
     public float CD { get; private set; }
-    public bool ready { get; private set; } = true;
+    public bool Ready { get; private set; } = true;
 
     // Start is called before the first frame update
     void Start()
@@ -27,18 +27,18 @@ public class AttackCoolDown : MonoBehaviour
         if (tmpCD <= 0)
         {
             CD = 0;
-            ready = true;
+            Ready = true;
         }
         else
         {
             CD = tmpCD;
-            ready = false;
+            Ready = false;
         }
     }
 
     public void DoAttack()
     {
-        if (ready) 
+        if (Ready) 
         {
             CD = AtkCD;
         }

@@ -2,18 +2,23 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Shooting : SkillCD
+public class Shooting : MonoBehaviour
 {
     [SerializeField] private GameObject bulletPrefab;
     [SerializeField] private Transform firePoint;
-    [SerializeField] private float bulletForce = 5;
+    [SerializeField] private float bulletForce = 20;
+    private AttackCoolDown coolDown;
+
+    private void Start() {
+        coolDown = GetComponent<AttackCoolDown>();
+    }
 
     private void Update() {
-        EnemyAiming aiming = GetComponent<EnemyAiming>();
-        if (Ready && aiming.HasTarget)
+        Aiming aiming = GetComponent<Aiming>();
+        if (coolDown.Ready && aiming.HasTarget)
         {
             Shoot();
-            Use();
+            coolDown.DoAttack();
         }
     }
 
@@ -21,7 +26,7 @@ public class Shooting : SkillCD
     {
         GameObject bullet = Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
         Bullet bulletComponent = bullet.GetComponent<Bullet>();
-        bulletComponent.damage = GetComponentInParent<AttackPower>().Atk;
+        bulletComponent.owner = gameObject;
         Rigidbody2D rb = bullet.GetComponent<Rigidbody2D>();
         rb.AddForce(firePoint.up * bulletForce, ForceMode2D.Impulse);
     }
