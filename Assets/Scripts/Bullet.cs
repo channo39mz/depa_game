@@ -7,7 +7,7 @@ public class Bullet : MonoBehaviour
     [SerializeField] private GameObject hitEffect;
     [SerializeField] private bool hitPlayer = true;
     [SerializeField] private bool hitEnemy = true;
-    [HideInInspector] public GameObject owner;
+    [HideInInspector] public float damage;
 
     void Update()
     {
@@ -29,8 +29,7 @@ public class Bullet : MonoBehaviour
     {
         Destroy(gameObject);
         Damageable damageable = other.gameObject.GetComponent<Damageable>();
-        AttackPower power = owner.GetComponent<AttackPower>();
-        damageable.TakeDamage(power.Atk);
+        damageable.TakeDamage(damage);
         GameObject effect = Instantiate(hitEffect, transform.position, Quaternion.identity);
         Destroy(effect, 0.5f);
         Debug.Log("Hit");

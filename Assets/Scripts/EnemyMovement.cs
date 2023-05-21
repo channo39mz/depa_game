@@ -32,11 +32,10 @@ public class EnemyMovement : MonoBehaviour
         float distance = Vector2.Distance(target.position, transform.position);
         if (distance > atkRange)
         {
-            // Vector2 movement = target.position - transform.position;
-            // movement.x /= Mathf.Abs(movement.x);
-            // movement.y /= Mathf.Abs(movement.y);
-            // transform.Translate(movement * Time.fixedDeltaTime * moveSpeed);
-            transform.Translate(Vector2.up * Time.fixedDeltaTime * moveSpeed);
+            Vector2 movement = target.position - transform.position;
+            movement.x /= Mathf.Abs(movement.x);
+            movement.y /= Mathf.Abs(movement.y);
+            transform.Translate(movement * Time.fixedDeltaTime * moveSpeed);
         }
     }
 
