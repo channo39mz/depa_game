@@ -5,6 +5,8 @@ using UnityEngine;
 public class EnemyMovement : MonoBehaviour
 {
     public float Speed = 1;
+    public bool IsTracking { get; set; } = true;
+    public Vector2 Direction { get; set; } = Vector2.zero;
     private Tracking tracking;
     private float skillRange;
 
@@ -17,10 +19,11 @@ public class EnemyMovement : MonoBehaviour
 
     private void FixedUpdate()
     {
-        if (tracking.HasTarget)
+        if (tracking.HasTarget && IsTracking)
         {
             Track();
         }
+        transform.Translate(Direction * Time.fixedDeltaTime * Speed);
     }
 
     private void Track()
@@ -30,9 +33,13 @@ public class EnemyMovement : MonoBehaviour
         if (distance > skillRange)
         {
             Vector2 movement = target.position - transform.position;
-            // movement.x /= Mathf.Abs(movement.x);
-            // movement.y /= Mathf.Abs(movement.y);
-            transform.Translate(movement * Time.fixedDeltaTime * Speed);
+            movement.x = Mathf.Sign(movement.x);
+            movement.y = Mathf.Sign(movement.y);
+            Direction = movement;
+        }
+        else
+        {
+            Direction = Vector2.zero;
         }
     }
 }
