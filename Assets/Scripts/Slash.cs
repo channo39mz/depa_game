@@ -4,13 +4,38 @@ using UnityEngine;
 
 public class Slash : SkillCD
 {
-    private void OnTriggerStay2D(Collider2D other) {
-        if (other.tag == "Player" && Ready)
+    private GameObject target;
+    private bool hasTarget;
+
+    private void Update() {
+        if (hasTarget && Ready)
         {
-            DamageManager manager = other.GetComponent<DamageManager>();
-            float damage = GetComponentInParent<AttackPower>().Atk;
-            manager.TakeDamage(damage);
+            SlashAttack();
             Use();
+        }
+    }
+
+    private void SlashAttack()
+    {
+        DamageManager manager = target.GetComponent<DamageManager>();
+        float damage = GetComponentInParent<AttackPower>().Atk;
+        manager.TakeDamage(damage);
+    }
+
+    private void OnTriggerStay2D(Collider2D other) {
+        if (other.tag == "Player")
+        {
+            target = other.gameObject;
+            hasTarget = true;
+        }
+    }
+
+    private void OnTriggerExit2D(Collider2D other)
+    {
+        if (other.tag == "Player")
+        {
+            target = null;
+            hasTarget = false;
         }
     }
 }
