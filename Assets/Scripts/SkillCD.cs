@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class SkillCD : MonoBehaviour
 {
-    [SerializeField] private float maxCD;
+    [SerializeField] private float maxCD = 1;
     private float CD;
     protected bool Ready { get; private set; } = true;
 

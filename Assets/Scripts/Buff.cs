@@ -26,12 +26,10 @@ public class Buff : SkillCD
     {
         AttackPower power = GetComponentInParent<AttackPower>();
         power.Atk += atkIncrease;
-        Debug.Log(power.Atk);
         EnemyMovement movement = GetComponentInParent<EnemyMovement>();
         movement.Speed += speedIncrease;
         yield return new WaitForSeconds(waittime);
         power.Atk -= atkIncrease;
-        Debug.Log(power.Atk);
         movement.Speed -= speedIncrease;
     }
 }
