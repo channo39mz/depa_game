@@ -30,8 +30,8 @@ public class EnemyMovement : MonoBehaviour
         if (distance > skillRange)
         {
             Vector2 movement = target.position - transform.position;
-            movement.x /= Mathf.Abs(movement.x);
-            movement.y /= Mathf.Abs(movement.y);
+            // movement.x /= Mathf.Abs(movement.x);
+            // movement.y /= Mathf.Abs(movement.y);
             transform.Translate(movement * Time.fixedDeltaTime * Speed);
         }
     }
