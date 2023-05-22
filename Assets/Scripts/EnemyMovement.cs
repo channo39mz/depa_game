@@ -4,42 +4,52 @@ using UnityEngine;
 
 public class EnemyMovement : MonoBehaviour
 {
-    public float Speed = 1;
-    public bool IsTracking { get; set; } = true;
-    public Vector2 Direction { get; set; } = Vector2.zero;
-    private Tracking tracking;
-    private float skillRange;
-
-    private void Start()
+    [SerializeField] private int moveSpeed = 1;
+    public int MoveSpeed
     {
-        tracking = GetComponentInChildren<Tracking>();
-        CircleCollider2D[] collider = GetComponentsInChildren<CircleCollider2D>();
-        skillRange = collider[1].radius;
+        get => moveSpeed;
+        set => moveSpeed = value;
+    }
+    private Transform target;
+    private float atkRange;
+
+    private void Start() {
+        atkRange = GetComponent<AttackRange>().AtkRange;
     }
 
-    private void FixedUpdate()
-    {
-        if (tracking.HasTarget && IsTracking)
-        {
-            Track();
-        }
-        transform.Translate(Direction * Time.fixedDeltaTime * Speed);
+    private void FixedUpdate() {
+        if (HasTarget()) Move();
     }
 
-    private void Track()
+    private bool HasTarget()
     {
-        Transform target = tracking.Target;
+        if (target != null) return true;
+        return false;
+    }
+
+    private void Move()
+    {
         float distance = Vector2.Distance(target.position, transform.position);
-        if (distance > skillRange)
+        if (distance > atkRange)
         {
             Vector2 movement = target.position - transform.position;
-            movement.x = Mathf.Sign(movement.x);
-            movement.y = Mathf.Sign(movement.y);
-            Direction = movement;
+            movement.x /= Mathf.Abs(movement.x);
+            movement.y /= Mathf.Abs(movement.y);
+            transform.Translate(movement * Time.fixedDeltaTime * moveSpeed);
         }
-        else
+    }
+
+    private void OnTriggerStay2D(Collider2D other) {
+        if (other.tag == "Player")
         {
-            Direction = Vector2.zero;
+            target = other.transform;
+        }
+    }
+
+    private void OnTriggerExit2D(Collider2D other) {
+        if (other.tag == "Player")
+        {
+            target = null;
         }
     }
 }

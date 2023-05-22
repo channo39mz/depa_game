@@ -4,5 +4,15 @@ using UnityEngine;
 
 public class AttackPower : MonoBehaviour
 {
-    public float Atk = 1;
+    [SerializeField] private float atk = 1;
+    public float Atk
+    {   
+        get => atk;
+        private set => atk = value;
+    }
+
+    public void increaseAtk(float amount)
+    {
+        Atk += amount;
+    }
 }
