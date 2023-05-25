@@ -10,6 +10,7 @@ TagManager:
   - Coin
   - Skill
   - Inventory
+  - Event
   layers:
   - Default
   - TransparentFX
