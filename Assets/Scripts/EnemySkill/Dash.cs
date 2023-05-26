@@ -9,11 +9,14 @@ public class Dash : SkillCD
     private bool hasTarget;
     private Aiming aiming;
     private EnemyMovement movement;
+    private float tmpSpeed;
+    private bool isDashing = false;
 
     private void Start()
     {
         aiming = GetComponentInParent<Aiming>();
         movement = GetComponentInParent<EnemyMovement>();
+        tmpSpeed = movement.Speed;
     }
 
     private void Update()
@@ -32,12 +35,16 @@ public class Dash : SkillCD
 
     private IEnumerator DashForSeconds(float time)
     {
+        movement.IsTracking = false;
         aiming.Lock = true;
-        float tmp = movement.Speed;
+        tmpSpeed = movement.Speed;
         movement.Speed = speed;
+        isDashing = true;
         yield return new WaitForSeconds(time);
+        movement.IsTracking = true;
         aiming.Lock = false;
-        movement.Speed = tmp;
+        movement.Speed = tmpSpeed;
+        isDashing = false;
     }
 
     private void OnTriggerStay2D(Collider2D other)
@@ -53,6 +60,17 @@ public class Dash : SkillCD
         if (other.tag == "Player")
         {
             hasTarget = false;
+        }
+    }
+
+    private void OnCollisionEnter2D(Collision2D other)
+    {
+        
+        if (other.gameObject.tag == "Player" && isDashing)
+        {
+            float damage = GetComponentInParent<AttackPower>().Atk;
+            other.gameObject.GetComponent<DamageManager>().TakeDamage(damage);
+            isDashing = false;
         }
     }
 }

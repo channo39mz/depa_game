@@ -7,16 +7,15 @@ public class EnemyMovement : MonoBehaviour
     public float Speed = 1;
     private float curSpeed;
     [SerializeField] private Animator animator;
-    private Vector2 direction;
+    public bool IsTracking = true;
 
     private void FixedUpdate()
     {
         Aiming aiming = GetComponent<Aiming>();
         curSpeed = Speed;
-        if (!aiming.Lock)
+        if (IsTracking)
         {
             Track();
-            direction = aiming.Direction;
         }
         transform.Translate(aiming.Direction * Time.fixedDeltaTime * curSpeed);
         animator.SetFloat("Horizontal", aiming.Direction.x);
