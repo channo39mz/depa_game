@@ -250,7 +250,7 @@ PrefabInstance:
     - target: {fileID: 395357375709352734, guid: 55527125df906294fa51491d2bd8bb6c, type: 3}
       propertyPath: playerMana
       value: 
-      objectReference: {fileID: 1520323255}
+      objectReference: {fileID: 0}
     - target: {fileID: 395357376278687846, guid: 55527125df906294fa51491d2bd8bb6c, type: 3}
       propertyPath: m_AnchorMax.x
       value: 0
@@ -266,6 +266,26 @@ PrefabInstance:
     - target: {fileID: 395357376343503309, guid: 55527125df906294fa51491d2bd8bb6c, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1600024524729832440, guid: 55527125df906294fa51491d2bd8bb6c, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1600024524729832440, guid: 55527125df906294fa51491d2bd8bb6c, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6116125257076805101, guid: 55527125df906294fa51491d2bd8bb6c, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6116125257076805101, guid: 55527125df906294fa51491d2bd8bb6c, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7315249647637802702, guid: 55527125df906294fa51491d2bd8bb6c, type: 3}
+      propertyPath: m_RootOrder
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 55527125df906294fa51491d2bd8bb6c, type: 3}
@@ -328,9 +348,13 @@ PrefabInstance:
       propertyPath: m_Name
       value: Kongkoi
       objectReference: {fileID: 0}
+    - target: {fileID: 1820407702677374836, guid: 15a1c921e62a4c64da82ef170e96c4dc, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1820407702677374841, guid: 15a1c921e62a4c64da82ef170e96c4dc, type: 3}
       propertyPath: m_RootOrder
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 1820407702677374841, guid: 15a1c921e62a4c64da82ef170e96c4dc, type: 3}
       propertyPath: m_LocalPosition.x
@@ -553,9 +577,13 @@ PrefabInstance:
       propertyPath: m_Name
       value: Krasue
       objectReference: {fileID: 0}
+    - target: {fileID: 5054467357154061895, guid: 18cb6d8f065e86547be2a579916b4df3, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5054467357154061904, guid: 18cb6d8f065e86547be2a579916b4df3, type: 3}
       propertyPath: m_RootOrder
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 5054467357154061904, guid: 18cb6d8f065e86547be2a579916b4df3, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1114,17 +1142,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &1520323255 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 395357374810891011, guid: 55527125df906294fa51491d2bd8bb6c, type: 3}
-  m_PrefabInstance: {fileID: 152223795}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 15e3326e2990b9548b18316c0d8fcb6a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!4 &1523130153 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3723596411157102441, guid: 0ab5a4d300226e643a12162e37f794d1, type: 3}
@@ -1837,7 +1854,7 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 2629246439679780847, guid: 56242cf23ecc1a44f9e22a3ed5844469, type: 3}
   m_PrefabInstance: {fileID: 2040949815}
   m_PrefabAsset: {fileID: 0}
---- !u!1001 &6836200650772852475
+--- !u!1001 &1068949700608094252
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -1850,7 +1867,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6225778430698764790, guid: 54cba4b38b0e46a428f0f64a0b0f08b0, type: 3}
       propertyPath: m_RootOrder
-      value: 4
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 6225778430698764790, guid: 54cba4b38b0e46a428f0f64a0b0f08b0, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1892,7 +1909,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 3411518790476620151, guid: 54cba4b38b0e46a428f0f64a0b0f08b0, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 54cba4b38b0e46a428f0f64a0b0f08b0, type: 3}
 --- !u!1001 &7293701868025974061
 PrefabInstance:
@@ -1964,7 +1982,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 6182082161694335647, guid: b70684de5a1a8754ba2acc6b5f7521e4, type: 3}
       propertyPath: m_RootOrder
-      value: 3
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 6182082161694335647, guid: b70684de5a1a8754ba2acc6b5f7521e4, type: 3}
       propertyPath: m_LocalPosition.x
@@ -2009,6 +2027,10 @@ PrefabInstance:
     - target: {fileID: 6182082161694335717, guid: b70684de5a1a8754ba2acc6b5f7521e4, type: 3}
       propertyPath: m_Name
       value: Suea Saming
+      objectReference: {fileID: 0}
+    - target: {fileID: 6182082161694335717, guid: b70684de5a1a8754ba2acc6b5f7521e4, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b70684de5a1a8754ba2acc6b5f7521e4, type: 3}

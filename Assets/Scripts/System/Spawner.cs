@@ -17,8 +17,8 @@ namespace Scripts
 
         private Vector2 RandomVector2()
         {
-            float length = transform.localScale.x / 2;
-            float height = transform.localScale.y / 2;
+            float length = transform.lossyScale.x / 2;
+            float height = transform.lossyScale.y / 2;
             float x = Random.Range(-length, length);
             float y = Random.Range(-height, height);
             return new Vector2(x, y);

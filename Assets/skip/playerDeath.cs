@@ -2,10 +2,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Death : MonoBehaviour
+public class playerDeath : Death
 {
-    public virtual void Manage()
+    public GameObject endcamera;
+    public override void Manage()
     {
+        endcamera.SetActive(true);
+        base.Manage();
         gameObject.SetActive(false);
         Debug.Log(name + " has died");
         bool hasLooting = TryGetComponent<Looting>(out Looting looting);

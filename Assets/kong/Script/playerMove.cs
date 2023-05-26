@@ -41,4 +41,9 @@ public class playerMove : MonoBehaviour
             IsPressSpace = true;
         }
     }
+
+    public void SetSpeed(float speed)
+    {
+        this.speed = speed;
+    }
 }
