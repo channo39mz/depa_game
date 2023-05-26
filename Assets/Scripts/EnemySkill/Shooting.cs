@@ -8,7 +8,8 @@ public class Shooting : SkillCD
     [SerializeField] private Transform firePoint;
     [SerializeField] private float bulletForce = 5;
 
-    private void Update() {
+    private void Update()
+    {
         EnemyAiming aiming = GetComponent<EnemyAiming>();
         if (Ready && aiming.HasTarget)
         {

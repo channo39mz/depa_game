@@ -5,41 +5,31 @@ using UnityEngine;
 public class EnemyMovement : MonoBehaviour
 {
     public float Speed = 1;
-    public bool IsTracking { get; set; } = true;
-    public Vector2 Direction { get; set; } = Vector2.zero;
-    private Tracking tracking;
-    private float skillRange;
-
-    private void Start()
-    {
-        tracking = GetComponentInChildren<Tracking>();
-        CircleCollider2D[] collider = GetComponentsInChildren<CircleCollider2D>();
-        skillRange = collider[1].radius;
-    }
+    private float curSpeed;
+    [SerializeField] private Animator animator;
+    private Vector2 direction;
 
     private void FixedUpdate()
     {
-        if (tracking.HasTarget && IsTracking)
+        Aiming aiming = GetComponent<Aiming>();
+        curSpeed = Speed;
+        if (!aiming.Lock)
         {
             Track();
+            direction = aiming.Direction;
         }
-        transform.Translate(Direction * Time.fixedDeltaTime * Speed);
+        transform.Translate(aiming.Direction * Time.fixedDeltaTime * curSpeed);
+        animator.SetFloat("Horizontal", aiming.Direction.x);
+        animator.SetFloat("Vertical", aiming.Direction.y);
     }
 
     private void Track()
     {
-        Transform target = tracking.Target;
-        float distance = Vector2.Distance(target.position, transform.position);
-        if (distance > skillRange)
+        Tracking tracking = GetComponentInChildren<Tracking>();
+        float skillRange = GetComponentsInChildren<CircleCollider2D>()[1].radius;
+        if (tracking.Distance <= skillRange)
         {
-            Vector2 movement = target.position - transform.position;
-            movement.x = Mathf.Sign(movement.x);
-            movement.y = Mathf.Sign(movement.y);
-            Direction = movement;
-        }
-        else
-        {
-            Direction = Vector2.zero;
+            curSpeed = 0;
         }
     }
 }
