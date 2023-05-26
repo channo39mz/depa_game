@@ -8,6 +8,8 @@ TagManager:
   - EnemyCheck
   - Item
   - Coin
+  - Skill
+  - Inventory
   layers:
   - Default
   - TransparentFX

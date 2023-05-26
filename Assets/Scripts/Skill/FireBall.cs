@@ -16,7 +16,8 @@ public class FireBall : MonoBehaviour
     }
     public void Activate(GameObject Player,Transform shootingPoint){
         Mana playerMana = Player.GetComponent<Mana>();
-        Instantiate(spellObject, shootingPoint.position, shootingPoint.rotation);
+        var newBullet = Instantiate(spellObject, new Vector3(shootingPoint.position.x,shootingPoint.position.y,0), shootingPoint.rotation);
+        newBullet.GetComponent<SpellBullet>().damageSkill = damage;
         playerMana.decreaseMana(ManaCost);
     }
 }

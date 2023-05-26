@@ -8,11 +8,12 @@ public class Thunder : MonoBehaviour
 {
     public float damageSkill;
     public float castRange;
-    public float manaCost;
+    public float ManaCost;
     private Canvas canvas;
     Vector2 mousePos;
     Camera cam;
     public GameObject thunderSprite;
+    public Mana playerMana;
     void Start(){
         canvas = this.transform.GetChild(0).GetComponent<Canvas>();
     }
@@ -23,8 +24,15 @@ public class Thunder : MonoBehaviour
         canvas.transform.position = new Vector2(mousePos.x,mousePos.y);       
 
         if(Input.GetMouseButtonDown(1)){
+            thunderSprite.transform.position = canvas.gameObject.transform.position;
             thunderSprite.gameObject.SetActive(true);
-            Destroy(this.gameObject,0.25f);
+            canvas.gameObject.SetActive(false);
+            playerMana.decreaseMana(ManaCost);
+            Destroy(this.gameObject,0.1f);
+        }
+
+        if(Input.GetKeyDown(KeyCode.Q)){
+            Destroy(this.gameObject);
         }
     }
 }

@@ -9,7 +9,6 @@ public class randomroomoder : MonoBehaviour
     public static int num = 0;
     public static List<int> orderOfmap = new List<int> { 1, 2, 3, 4 ,5};
     public GameObject Player;
-    public Camera deadCam;
     // Start is called before the first frame update
     void Start()
     {

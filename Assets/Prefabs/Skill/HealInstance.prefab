@@ -97,7 +97,7 @@ GameObject:
   - component: {fileID: 2625863585795898049}
   m_Layer: 0
   m_Name: HealInstance
-  m_TagString: Untagged
+  m_TagString: Skill
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -132,7 +132,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Amount: 10
   ManaCost: 20
-  duration: 0
 --- !u!210 &2625863585795898049
 SortingGroup:
   m_ObjectHideFlags: 0

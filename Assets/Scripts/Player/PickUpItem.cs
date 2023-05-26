@@ -16,7 +16,7 @@ public class PickUpItem : MonoBehaviour
             }
         }
         else if(collision.tag == "Coin"){
-            GetComponent<PlayerCoins>().CoinIncrease(1);
+            inventory.addCoin(1);
             Destroy(collision.gameObject);
         }
     }

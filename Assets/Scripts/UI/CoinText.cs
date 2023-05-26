@@ -6,13 +6,13 @@ using TMPro;
 public class CoinText : MonoBehaviour
 {
     private TMP_Text coinText;
-    [SerializeField] PlayerCoins playerCoins;
+    [SerializeField] Inventory playerInventory;
 
     void Start(){
         coinText = GetComponent<TMP_Text>();
     }
 
     void Update(){
-        coinText.text = string.Format("Coins : {0}",playerCoins.coin);
+        coinText.text = string.Format("Coins : {0}",playerInventory.playerIngredients.getCoin());
     }
 }

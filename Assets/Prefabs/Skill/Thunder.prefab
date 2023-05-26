@@ -31,7 +31,6 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 351440184534007624}
-  - {fileID: 8815435817402810988}
   m_Father: {fileID: 351440184498760099}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -96,7 +95,7 @@ GameObject:
   - component: {fileID: 351440184498760100}
   m_Layer: 0
   m_Name: Thunder
-  m_TagString: Untagged
+  m_TagString: Skill
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -114,6 +113,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 351440184235272954}
+  - {fileID: 8815435817402810988}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -129,10 +129,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f233e1535366c424a8a1060456a36f7c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damageSkill: 20
+  damageSkill: 7
   castRange: 100
-  manaCost: 30
+  ManaCost: 30
   thunderSprite: {fileID: 3802284361817482573}
+  playerMana: {fileID: 117967326119241432, guid: 55527125df906294fa51491d2bd8bb6c, type: 3}
 --- !u!1 &351440184534007625
 GameObject:
   m_ObjectHideFlags: 0
@@ -240,13 +241,13 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 351440184235272954}
+  m_Father: {fileID: 351440184498760099}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_SizeDelta: {x: 1, y: 1}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!212 &7184602822406818309
 SpriteRenderer:

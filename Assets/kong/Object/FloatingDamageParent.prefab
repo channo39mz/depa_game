@@ -56,7 +56,7 @@ SortingGroup:
   m_Enabled: 1
   m_SortingLayerID: 1255094971
   m_SortingLayer: 3
-  m_SortingOrder: 0
+  m_SortingOrder: 1
 --- !u!1 &5061845096652731970
 GameObject:
   m_ObjectHideFlags: 0
