@@ -67,6 +67,28 @@ public class Ingredients
         return null;
     }
 
+    //for player
+    public void AddItemFromPlayer(Item pickupItem){
+        for(int i=0;i<items.Count;i++){
+            if(items[i].Item.name == pickupItem.name){
+                items[i].Quantity++;
+                return;
+            }
+        }
+        Add(pickupItem,1);
+    }
+
+    public List<LineItem> getListItems(){
+        return items;
+    }
+
+    public void CoinIncrease(float amount){
+        coins += (int)amount;
+    }
+
+    public int getCoin(){
+        return coins;
+    }
     public override string ToString()
     {
         string str = items[0].Item.ItemName + "(" + items[0].Quantity + ")";
