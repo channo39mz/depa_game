@@ -1,0 +1,65 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!78 &1
+TagManager:
+  serializedVersion: 2
+  tags:
+  - Enemy
+  - EnemyCheck
+  - Item
+  - Coin
+  - Skill
+  - Inventory
+  - Event
+  layers:
+  - Default
+  - TransparentFX
+  - Ignore Raycast
+  - 
+  - Water
+  - UI
+  - PopUpText
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  m_SortingLayers:
+  - name: Default
+    uniqueID: 0
+    locked: 0
+  - name: Player
+    uniqueID: 2006055355
+    locked: 0
+  - name: sword
+    uniqueID: 442132711
+    locked: 0
+  - name: PopupDamage
+    uniqueID: 1255094971
+    locked: 0
+  - name: UI
+    uniqueID: 53303017
+    locked: 0
+  - name: Inventory
+    uniqueID: 931199743
+    locked: 0
