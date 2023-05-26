@@ -20,11 +20,12 @@ public class ShopManager : MonoBehaviour
 
     public void Buy()
     {
-        GameObject player = GameObject.FindGameObjectWithTag("Player");
-        // ingredients = player.GetComponent<>().Ingredients;
+        Inventory inventory = GameObject.FindGameObjectWithTag("Inventory").GetComponent<Inventory>();
+        ingredients = inventory.playerIngredients;
         GameObject buttonRef = GameObject.FindGameObjectWithTag("Event").GetComponent<EventSystem>().currentSelectedGameObject;
         Skill skill = shop.GetComponent<Shop>().BuySkill(buttonRef.GetComponent<ButtonInfo>().Id, ingredients);
         Debug.Log(skill);
-        // player.GetComponent<>().Add(skill);
+        GameObject player = GameObject.FindGameObjectWithTag("Player");
+        player.GetComponent<PlayerSkillCast>().Add(skill.gameObject);
     }
 }
