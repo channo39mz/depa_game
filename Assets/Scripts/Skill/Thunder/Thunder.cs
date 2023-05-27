@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.UI;
 
-public class Thunder : MonoBehaviour
+public class Thunder : CraftingSkill
 {
     public float damageSkill;
     public float castRange;

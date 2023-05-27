@@ -17,7 +17,8 @@ public class EnemyMovement : MonoBehaviour
         {
             Track();
         }
-        transform.Translate(aiming.Direction * Time.fixedDeltaTime * curSpeed);
+        Rigidbody2D rb = GetComponent<Rigidbody2D>();
+        rb.velocity = aiming.Direction * Time.fixedDeltaTime * curSpeed;
         animator.SetFloat("Horizontal", aiming.Direction.x);
         animator.SetFloat("Vertical", aiming.Direction.y);
     }
