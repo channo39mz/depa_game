@@ -10,18 +10,21 @@ public class PlayerSkillCast : MonoBehaviour
     [SerializeField] private GameObject[] SkillSlot;
     [SerializeField] private TMP_Text SkillText;
     [SerializeField] private GameObject SkillAim;
+    [SerializeField] private SkillSlot UISkillSlots;
     public GameObject player;
     private Mana playerMana;
     private GameObject curSkill;
     private int state = 0;
+    private bool isDelay;
     GameObject newSkill;
     void Start(){
         curSkill = SkillSlot[state];
         playerMana = player.GetComponent<Mana>();
+        isDelay = false;
     }
     void Update(){
         curSkill = SkillSlot[state];
-        SkillText.text = state.ToString();
+        // SkillText.text = state.ToString();
         if(Input.GetMouseButtonDown(1)){
             PressRightMouse();
         }
@@ -29,15 +32,11 @@ public class PlayerSkillCast : MonoBehaviour
 
     public void Add(GameObject skill){
         SkillSlot[state] = skill;
+        UISkillSlots.RefreshSlots(state);
     }
     public void PressE(InputAction.CallbackContext context){
         if(context.phase == InputActionPhase.Performed && SkillSlot.Length == 3 && curSkill){
-            if(curSkill.name == "HealInstance"){
-                if(!playerMana.IsOutOfMana(curSkill.GetComponent<HealInstance>().ManaCost)){
-                    curSkill.GetComponent<HealInstance>().Activate(player);
-                }
-            }
-            else if(curSkill.name == "Thunder"){
+            if(curSkill.name == "Thunder"){
                 if(!playerMana.IsOutOfMana(curSkill.GetComponent<Thunder>().ManaCost) && newSkill == null){
                     newSkill = Instantiate(curSkill, new Vector3(0,0,0), SkillAim.transform.rotation);
                     newSkill.transform.localPosition = SkillAim.transform.position;
@@ -60,13 +59,34 @@ public class PlayerSkillCast : MonoBehaviour
                 curSkill.GetComponent<FireBall>().Activate(player,SkillAim.transform);
             }
         }
+        else if(curSkill.name == "HealInstance"){
+            if(!playerMana.IsOutOfMana(curSkill.GetComponent<HealInstance>().ManaCost)){
+                curSkill.GetComponent<HealInstance>().Activate(player);
+            }
+        }
     }
 
     public void PressQ(InputAction.CallbackContext context){
         if(context.phase == InputActionPhase.Performed && SkillSlot.Length == 3){
-            state = (state + 1) % 3;
-            Debug.Log(state);
-            curSkill = SkillSlot[state];
+            if(!isDelay){
+                state = (state + 1) % 3;
+                UISkillSlots.RunAnimation();
+                StartCoroutine(DelaySwap(0.25f));
+                // UISkillSlots.RefreshSlots(state);
+                // curSkill = SkillSlot[state];
+            }
+            isDelay = true;
         }
+    }
+
+    public GameObject[] getSkill(){
+        return SkillSlot;
+    }
+
+    private IEnumerator DelaySwap(float delay){
+        yield return new WaitForSeconds(delay);
+        UISkillSlots.RefreshSlots(state);
+        curSkill = SkillSlot[state];
+        isDelay = false;
     }
 }

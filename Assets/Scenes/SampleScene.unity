@@ -811,6 +811,14 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3987314569645909098, guid: 55527125df906294fa51491d2bd8bb6c, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5001063601609664454, guid: 55527125df906294fa51491d2bd8bb6c, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5384032448883519432, guid: 55527125df906294fa51491d2bd8bb6c, type: 3}
       propertyPath: m_IsActive
       value: 0
@@ -831,5 +839,13 @@ PrefabInstance:
       propertyPath: weapon
       value: 
       objectReference: {fileID: 7374378743067472492, guid: ab69076ba764c9f43a5efe8451a018ec, type: 3}
+    - target: {fileID: 8234590802046453645, guid: 55527125df906294fa51491d2bd8bb6c, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8263776611327789938, guid: 55527125df906294fa51491d2bd8bb6c, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 55527125df906294fa51491d2bd8bb6c, type: 3}

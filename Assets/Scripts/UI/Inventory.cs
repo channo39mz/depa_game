@@ -10,7 +10,7 @@ public class Inventory : MonoBehaviour
     [SerializeField] ItemSlot[] itemSlots;
     public Ingredients playerIngredients;
     void Start(){
-        this.enabled = false;
+        // this.enabled = false;
     }
     void Update(){
         Refresh();

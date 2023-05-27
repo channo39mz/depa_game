@@ -34,7 +34,7 @@ public class ShopManager : MonoBehaviour
             }
             else if (skill.tag == "Weapon")
             {
-                // player.GetComponent<WeaponAttack>()
+                player.GetComponent<WeaponAttack>().Add(skill.gameObject);
             }
         }
     }

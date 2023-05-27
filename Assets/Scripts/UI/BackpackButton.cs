@@ -1,25 +1,31 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class BackpackButton : MonoBehaviour
 {   
-    [SerializeField] private GameObject BackpackObject;
+    [SerializeField] Image inventoryImage;
+    [SerializeField] GameObject itemSlots;
     public void OpenInventory(){
-        if(!BackpackObject.activeSelf){
-            BackpackObject.SetActive(true);
+        if(!inventoryImage.enabled){
+            inventoryImage.GetComponent<Image>().enabled = true;
+            itemSlots.SetActive(true);
         }
         else{
-            BackpackObject.SetActive(false);
+            inventoryImage.GetComponent<Image>().enabled = false;
+            itemSlots.SetActive(false);
         }
     }
 
     public void pressTab(){
-        if(!BackpackObject.activeSelf){
-            BackpackObject.SetActive(true);
+        if(!inventoryImage.enabled){
+            inventoryImage.GetComponent<Image>().enabled = true;
+            itemSlots.SetActive(true);
         }
         else{
-            BackpackObject.SetActive(false);
+            inventoryImage.GetComponent<Image>().enabled = false;
+            itemSlots.SetActive(false);
         }
     }
 }
