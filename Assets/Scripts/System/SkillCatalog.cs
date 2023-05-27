@@ -4,24 +4,11 @@ using UnityEngine;
 
 public class SkillCatalog : MonoBehaviour
 {
-    // private Dictionary<string, Skill> skillList = new Dictionary<string, Skill>();
-    // private Dictionary<string, Ingredients> ingredList = new Dictionary<string, Ingredients>();
     [SerializeField] private CraftingSkill[] skills;
     public CraftingSkill[] Skills { get => skills; }
 
-    private void Awake()
-    {
-        // CraftingSkill[] skills = GetComponentsInChildren<CraftingSkill>(true);
-        // foreach (var skill in skills)
-        // {
-        //     skillList.TryAdd(skill.SkillName, skill);
-        //     ingredList.TryAdd(skill.SkillName, skill.Ingredients);
-        // }
-    }
-
     public List<CraftingSkill> Choose(int c)
     {
-        // List<CraftingSkill> skills = new List<CraftingSkill>(skillList.Values);
         List<int> order = Choose(skills.Length, c);
         List<CraftingSkill> choice = new List<CraftingSkill>();
         for (int i = 0; i < c; i++)
@@ -53,7 +40,6 @@ public class SkillCatalog : MonoBehaviour
     {
         foreach (CraftingSkill skill in skills)
         {
-            // Debug.Log(name + " : " + GetIngredients(name).ToString());
             Debug.Log(name + " : " + skill.Ingredients);
         }
     }
