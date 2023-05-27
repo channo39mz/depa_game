@@ -26,6 +26,16 @@ public class ShopManager : MonoBehaviour
         Skill skill = shop.GetComponent<Shop>().BuySkill(buttonRef.GetComponent<ButtonInfo>().Id, ingredients);
         Debug.Log(skill);
         GameObject player = GameObject.FindGameObjectWithTag("Player");
-        player.GetComponent<PlayerSkillCast>().Add(skill.gameObject);
+        if (skill != null)
+        {
+            if (skill.tag == "Skill")
+            {
+                player.GetComponent<PlayerSkillCast>().Add(skill.gameObject);
+            }
+            else if (skill.tag == "Weapon")
+            {
+                // player.GetComponent<WeaponAttack>()
+            }
+        }
     }
 }

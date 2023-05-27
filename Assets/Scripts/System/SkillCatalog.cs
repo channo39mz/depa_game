@@ -4,24 +4,26 @@ using UnityEngine;
 
 public class SkillCatalog : MonoBehaviour
 {
-    private Dictionary<string, Skill> skillList = new Dictionary<string, Skill>();
-    private Dictionary<string, Ingredients> ingredList = new Dictionary<string, Ingredients>();
+    // private Dictionary<string, Skill> skillList = new Dictionary<string, Skill>();
+    // private Dictionary<string, Ingredients> ingredList = new Dictionary<string, Ingredients>();
+    [SerializeField] private CraftingSkill[] skills;
+    public CraftingSkill[] Skills { get => skills; }
 
     private void Awake()
     {
-        CraftingSkill[] skills = GetComponentsInChildren<CraftingSkill>(true);
-        foreach (var skill in skills)
-        {
-            skillList.TryAdd(skill.SkillName, skill);
-            ingredList.TryAdd(skill.SkillName, skill.Ingredients);
-        }
+        // CraftingSkill[] skills = GetComponentsInChildren<CraftingSkill>(true);
+        // foreach (var skill in skills)
+        // {
+        //     skillList.TryAdd(skill.SkillName, skill);
+        //     ingredList.TryAdd(skill.SkillName, skill.Ingredients);
+        // }
     }
 
-    public List<Skill> Choose(int c)
+    public List<CraftingSkill> Choose(int c)
     {
-        List<Skill> skills = new List<Skill>(skillList.Values);
-        List<int> order = Choose(skills.Count, c);
-        List<Skill> choice = new List<Skill>();
+        // List<CraftingSkill> skills = new List<CraftingSkill>(skillList.Values);
+        List<int> order = Choose(skills.Length, c);
+        List<CraftingSkill> choice = new List<CraftingSkill>();
         for (int i = 0; i < c; i++)
         {
             choice.Add(skills[order[i]]);
@@ -31,6 +33,7 @@ public class SkillCatalog : MonoBehaviour
 
     private List<int> Choose(int n, int c)
     {
+        // [0, 1, 2, 3, ... , n - 1]
         List<int> order = new List<int>();
         for (int i = 0; i < n; i++)
         {
@@ -46,21 +49,12 @@ public class SkillCatalog : MonoBehaviour
         return random;
     }
 
-    public Skill GetSkill(string name)
-    {
-        return skillList[name];
-    }
-
-    public Ingredients GetIngredients(string name)
-    {
-        return ingredList[name];
-    }
-
     public void ShowCatalog()
     {
-        foreach (string name in skillList.Keys)
+        foreach (CraftingSkill skill in skills)
         {
-            Debug.Log(name + " : " + GetIngredients(name).ToString());
+            // Debug.Log(name + " : " + GetIngredients(name).ToString());
+            Debug.Log(name + " : " + skill.Ingredients);
         }
     }
 }

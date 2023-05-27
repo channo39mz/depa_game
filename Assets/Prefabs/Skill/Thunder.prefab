@@ -129,6 +129,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f233e1535366c424a8a1060456a36f7c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  skillName: Thunder
+  description: Praing Praing
+  image: {fileID: 21300000, guid: 74a46cb0819ffdc4889fe0c68ed0c511, type: 3}
+  ingredients:
+    coins: 40
+    items:
+    - item: {fileID: 431767800708026441, guid: 56242cf23ecc1a44f9e22a3ed5844469, type: 3}
+      quantity: 3
+    - item: {fileID: 2716128144899098752, guid: 0ab5a4d300226e643a12162e37f794d1, type: 3}
+      quantity: 3
   damageSkill: 7
   castRange: 100
   ManaCost: 30
