@@ -264,6 +264,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e3579bc36f001c246b4b96227bd73201, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  skillName: Holy Water
+  description: Splash holy water deal damage 2 in front of player
+  image: {fileID: 0}
+  ingredients:
+    coins: 0
+    items: []
   damageSkill: 2
   ManaCost: 10
   playerMana: {fileID: 0}

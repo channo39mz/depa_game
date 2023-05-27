@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class HolyWater : MonoBehaviour
+public class HolyWater : CraftingSkill
 {
     public float damageSkill;
     public float ManaCost;

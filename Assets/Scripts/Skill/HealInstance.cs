@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class HealInstance : MonoBehaviour
+public class HealInstance : CraftingSkill
 {
     public float Amount;
     public float ManaCost;

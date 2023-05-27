@@ -13,4 +13,13 @@ public class BackpackButton : MonoBehaviour
             BackpackObject.SetActive(false);
         }
     }
+
+    public void pressTab(){
+        if(!BackpackObject.activeSelf){
+            BackpackObject.SetActive(true);
+        }
+        else{
+            BackpackObject.SetActive(false);
+        }
+    }
 }

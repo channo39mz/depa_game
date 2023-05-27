@@ -130,6 +130,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f233e1535366c424a8a1060456a36f7c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  skillName: Thunder
+  description: Summon thunder by mouse position of player deal damage 7
+  image: {fileID: 0}
+  ingredients:
+    coins: 0
+    items: []
   damageSkill: 7
   castRange: 100
   ManaCost: 30

@@ -20,6 +20,10 @@ public class WeaponAttack : MonoBehaviour
             OnAttack();
         }
     }
+    public void Add(GameObject getWeapon){
+        weapon = getWeapon;
+        delay = weapon.GetComponent<Weapon>().cooldown;
+    }
     public void OnAttack(){
         if(!IsCD){
             cloneWeapon = Instantiate(weapon,playerWeapon.transform.position,playerWeapon.transform.rotation);

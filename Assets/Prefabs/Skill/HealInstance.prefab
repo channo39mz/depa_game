@@ -130,6 +130,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: da61c19df0f06ed42bd1f32d0e64d687, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  skillName: Heal Instatnce
+  description: Heal 10 HP Instatnly
+  image: {fileID: 0}
+  ingredients:
+    coins: 0
+    items: []
   Amount: 10
   ManaCost: 20
 --- !u!210 &2625863585795898049

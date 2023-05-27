@@ -70,7 +70,7 @@ public class Ingredients
     //for player
     public void AddItemFromPlayer(Item pickupItem){
         for(int i=0;i<items.Count;i++){
-            if(items[i].Item.name == pickupItem.name){
+            if(items[i].Item.GetItemName() == pickupItem.GetItemName()){
                 items[i].Quantity++;
                 return;
             }

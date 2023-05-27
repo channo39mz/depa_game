@@ -11,6 +11,7 @@ TagManager:
   - Skill
   - Inventory
   - Event
+  - Weapon
   layers:
   - Default
   - TransparentFX
