@@ -5,30 +5,24 @@ using UnityEngine.InputSystem;
 
 public class WeaponAttack : MonoBehaviour
 {
-    // [SerializeField] private Animator weaponAnimate;
-    // [SerializeField] private float weaponDamage;
-    // [SerializeField] private float delay;
-    // [SerializeField] private float ManaRegen;
     [SerializeField] private GameObject weapon;
     [SerializeField] private Mana playerMana;
-    public GameObject playerWeapon;
-    // private float weaponDamage;
-    // private float manaRegen;
+    [SerializeField] public GameObject playerWeapon;
     private float delay;
     private GameObject cloneWeapon;
-    // private Animator weaponAnimate;
     private bool IsCD;
     void Start(){
         IsCD = false;
         delay = weapon.GetComponent<Weapon>().cooldown;
-        // manaRegen = weapon.GetComponent<Weapon>().manaRegen;
-        // weaponDamage = weapon.GetComponent<Weapon>().weaponDamage;
-        // weaponAnimate = weapon.GetComponent<Weapon>().weaponAnimate;
     }
     void Update(){
         if(Input.GetMouseButtonDown(0)){
             OnAttack();
         }
+    }
+    public void Add(GameObject getWeapon){
+        weapon = getWeapon;
+        delay = weapon.GetComponent<Weapon>().cooldown;
     }
     public void OnAttack(){
         if(!IsCD){
@@ -36,18 +30,14 @@ public class WeaponAttack : MonoBehaviour
             cloneWeapon.transform.SetParent(playerWeapon.transform);
             cloneWeapon.GetComponent<Weapon>().playerMana = playerMana;
             cloneWeapon.GetComponent<Weapon>().OnAttack();
-            // weaponAnimate.SetTrigger("Attack");
             StartCoroutine(DelayAttack());
         }
         IsCD = true;
     }
 
-    // private void OnTriggerEnter2D(Collider2D collision){
-    //     if(collision.gameObject.tag == "Enemy"){
-    //         collision.gameObject.GetComponentInParent<Health>().decreaseHP(weaponDamage);
-    //         playerMana.ManaRegenOnHit(manaRegen);
-    //     }
-    // }
+    public GameObject GetCurrentWeapon(){
+        return weapon;
+    }
 
     private IEnumerator DelayAttack(){
         yield return new WaitForSeconds(delay);
