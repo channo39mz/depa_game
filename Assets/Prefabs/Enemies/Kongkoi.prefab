@@ -12,8 +12,8 @@ GameObject:
   - component: {fileID: 1820407702677374842}
   - component: {fileID: 1820407702677374843}
   - component: {fileID: 1820407702677374844}
-  - component: {fileID: 1820407702677374845}
   - component: {fileID: 1820407702677374846}
+  - component: {fileID: 1820407702677374845}
   - component: {fileID: 1820407702677374847}
   - component: {fileID: 1820407702677374832}
   - component: {fileID: 1820407702677374833}
@@ -132,19 +132,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 7
---- !u!114 &1820407702677374845
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1820407702677374836}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1790d36649eb1e447baa895ae9cfa2f7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
+  m_Constraints: 4
 --- !u!114 &1820407702677374846
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -159,6 +147,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   MaxHP: 10
   floatingDamage: {fileID: 829148786641475956, guid: d5f8f0173b1a3bf40bfe6691cb85525a, type: 3}
+--- !u!114 &1820407702677374845
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1820407702677374836}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1790d36649eb1e447baa895ae9cfa2f7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &1820407702677374847
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -183,7 +183,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c737866e6c246ac42bf9966795bd61af, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Atk: 1
+  Atk: 2
 --- !u!114 &1820407702677374833
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -196,8 +196,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3ee772ee139ecb74bb2dc9aa125d6b09, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Speed: 0.5
+  Speed: 20
   animator: {fileID: 1820407702677374835}
+  IsTracking: 1
 --- !u!114 &781104751747931260
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -210,7 +211,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6db0f3c4544253c47a16e73505ae6948, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  targetTag: 
+  targetTag: Player
 --- !u!114 &1820407702677374834
 MonoBehaviour:
   m_ObjectHideFlags: 0
