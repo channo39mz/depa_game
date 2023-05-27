@@ -69,9 +69,7 @@ public class Ingredients
 
     //for player
     public void AddItemFromPlayer(Item pickupItem){
-        // ItemCatalog catalog = GameObject.Find("Item Catalog").GetComponent<ItemCatalog>();
         for(int i=0;i<items.Count;i++){
-            // Item item = catalog.GetItem(pickupItem.name);
             if(items[i].Item.ItemName == pickupItem.ItemName){
                 items[i].Quantity++;
                 return;
