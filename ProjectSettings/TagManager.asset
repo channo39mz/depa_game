@@ -12,6 +12,7 @@ TagManager:
   - Inventory
   - Event
   - Weapon
+  - Wall
   layers:
   - Default
   - TransparentFX

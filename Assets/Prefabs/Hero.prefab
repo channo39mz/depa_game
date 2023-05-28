@@ -3589,6 +3589,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1386973965128060758}
   - component: {fileID: 6131753283442816226}
+  - component: {fileID: 5030582274177953351}
   m_Layer: 0
   m_Name: SkillAim
   m_TagString: Untagged
@@ -3623,6 +3624,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c87e64265d263ba40b52b9f981e33cfe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!210 &5030582274177953351
+SortingGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4592627868279265828}
+  m_Enabled: 1
+  m_SortingLayerID: 53303017
+  m_SortingLayer: 4
+  m_SortingOrder: 10
 --- !u!1 &4615355181034782180
 GameObject:
   m_ObjectHideFlags: 0
