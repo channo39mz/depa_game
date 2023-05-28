@@ -2,7 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SkillCatalog : MonoBehaviour
+[System.Serializable]
+public class SkillCatalog
 {
     [SerializeField] private CraftingSkill[] skills;
     public CraftingSkill[] Skills { get => skills; }
@@ -26,6 +27,7 @@ public class SkillCatalog : MonoBehaviour
         {
             order.Add(i);
         }
+        
         List<int> random = new List<int>();
         for (int i = n; i >= (n + 1) - c; i--)
         {
@@ -40,7 +42,7 @@ public class SkillCatalog : MonoBehaviour
     {
         foreach (CraftingSkill skill in skills)
         {
-            Debug.Log(name + " : " + skill.Ingredients);
+            Debug.Log(skill.SkillName + " : " + skill.Ingredients);
         }
     }
 }

@@ -9,7 +9,6 @@ public class Theboss : MonoBehaviour
     private Vector3 moveDirection;
     public GameObject[] bossskill;
     public GameObject namalrangeAttack;
-    public GameObject color;
     public bool isTiger = true;
 
     //[SerializeField] private Rigidbody2D rb;
@@ -33,11 +32,11 @@ public class Theboss : MonoBehaviour
     {
         if (isTiger)
         {
-            color.SetActive(false);
+            // color.SetActive(false);
         }
         else
         {
-            color.SetActive(true);
+            // color.SetActive(true);
         }
     }
     public void Reset()

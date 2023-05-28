@@ -4,11 +4,11 @@ using UnityEngine;
 
 public class OpenShop : MonoBehaviour
 {
-    [SerializeField] private GameObject windowShop;
     private bool hasCustomer = false;
     private bool windowActive = false;
 
     private void Update() {
+        GameObject windowShop = GetComponentInParent<ShopManager>().Canvas.gameObject;
         if (hasCustomer && Input.GetKeyDown(KeyCode.F))
         {
             if (!windowActive)

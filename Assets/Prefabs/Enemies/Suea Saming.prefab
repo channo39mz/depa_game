@@ -271,9 +271,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   xcount: 0
-  bossskill: []
-  namalrangeAttack: {fileID: 0}
-  color: {fileID: 0}
+  bossskill:
+  - {fileID: 2417740674062355603, guid: de1b15b79a7e01c45b6b32d7bacbb0d4, type: 3}
+  - {fileID: 468157209417222282, guid: 34d1db8ea5473d146bd96c85d9e52031, type: 3}
+  - {fileID: 5449042388002670322, guid: e4e99064454698344a2da5416a56c021, type: 3}
+  - {fileID: 1687299549314444417, guid: eb11ca48645a75542b69a1d0359b57f6, type: 3}
+  namalrangeAttack: {fileID: 2541666758259618867, guid: 9bf6345885346e849a110de753fd5531, type: 3}
   isTiger: 1
 --- !u!1001 &6182082160524848370
 PrefabInstance:
