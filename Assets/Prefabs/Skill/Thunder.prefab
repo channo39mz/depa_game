@@ -131,7 +131,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   skillName: Thunder
   description: Praing Praing
-  image: {fileID: 21300000, guid: 74a46cb0819ffdc4889fe0c68ed0c511, type: 3}
+  image: {fileID: 21300000, guid: 1332ed60ae20d7743873e4d5b6aecdc2, type: 3}
   ingredients:
     coins: 40
     items:

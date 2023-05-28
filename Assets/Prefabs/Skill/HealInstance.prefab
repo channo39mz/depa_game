@@ -132,7 +132,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   skillName: Heal Instance
   description: Heal Heal
-  image: {fileID: 21300000, guid: 1078e6444d6e119489d455b807820ddb, type: 3}
+  image: {fileID: 21300000, guid: 192496f39f347274199012c7b6db06d6, type: 3}
   ingredients:
     coins: 50
     items:
