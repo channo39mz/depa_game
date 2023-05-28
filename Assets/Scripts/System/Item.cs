@@ -9,8 +9,4 @@ public class Item : MonoBehaviour
     [SerializeField] private string description;
     public string Description { get => description; }
     public Sprite image;
-
-    public string GetItemName(){
-        return ItemName;
-    }
 }

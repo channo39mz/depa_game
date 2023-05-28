@@ -2,12 +2,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Shop : MonoBehaviour
+[System.Serializable]
+public class Shop
 {
     [SerializeField] private SkillCatalog catalog;
     public CraftingSkill[] Order { get; private set; }
 
-    private void Start()
+    public void NewOrder(int n)
     {
         Order = catalog.Choose(3).ToArray();
     }
