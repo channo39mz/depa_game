@@ -26,9 +26,10 @@ public class Thunder : CraftingSkill
         if(Input.GetMouseButtonDown(1)){
             thunderSprite.transform.position = canvas.gameObject.transform.position;
             thunderSprite.gameObject.SetActive(true);
+            thunderSprite.GetComponent<Animator>().SetTrigger("Trigger");
             canvas.gameObject.SetActive(false);
             playerMana.decreaseMana(ManaCost);
-            Destroy(this.gameObject,0.1f);
+            Destroy(this.gameObject,0.5f);
         }
 
         if(Input.GetKeyDown(KeyCode.Q)){

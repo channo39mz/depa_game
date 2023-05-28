@@ -14,7 +14,7 @@ public class Health : MonoBehaviour
 
     public void decreaseHP(float amount)
     {
-        ShowDamage(amount.ToString());
+        ShowDamage(amount);
         float tmpHP = HP;
         tmpHP -= amount;
 
@@ -39,10 +39,10 @@ public class Health : MonoBehaviour
         return MaxHP;
     }
 
-    private void ShowDamage(string amount){
-        if(floatingDamage){
+    private void ShowDamage(float amount){
+        if(floatingDamage && amount != 0){
             GameObject prefab = Instantiate(floatingDamage,transform.position,Quaternion.identity);
-            prefab.GetComponentInChildren<TextMesh>().text = amount;
+            prefab.GetComponentInChildren<TextMesh>().text = amount.ToString();
         }
     }
 

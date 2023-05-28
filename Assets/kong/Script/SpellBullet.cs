@@ -9,11 +9,13 @@ public class SpellBullet : MonoBehaviour
     public float castRange;
     private float Distance;
     private Vector2 firstPos;
+    [SerializeField] Animator BoomEffectAnimate;
     public GameObject child;
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
         firstPos = new Vector2(transform.position.x,transform.position.y);
+        // BoomEffectAnimate = child
         // child = this.transform.GetChild(0).gameObject;
     }
 
@@ -28,8 +30,9 @@ public class SpellBullet : MonoBehaviour
             var newChild = Instantiate(child,this.transform.position,this.transform.rotation);
             newChild.GetComponent<BoomEffect>().damageSkill = damageSkill;
             newChild.SetActive(true);
+            newChild.GetComponent<Animator>().SetTrigger("Trigger");
             Destroy(gameObject);
-            Destroy(newChild,0.25f);
+            Destroy(newChild,0.5f);
         }
     }
 

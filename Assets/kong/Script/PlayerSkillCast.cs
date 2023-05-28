@@ -38,7 +38,7 @@ public class PlayerSkillCast : MonoBehaviour
         if(context.phase == InputActionPhase.Performed && SkillSlot.Length == 3 && curSkill){
             if(curSkill.name == "Thunder"){
                 if(!playerMana.IsOutOfMana(curSkill.GetComponent<Thunder>().ManaCost) && newSkill == null){
-                    newSkill = Instantiate(curSkill, new Vector3(0,0,0), SkillAim.transform.rotation);
+                    newSkill = Instantiate(curSkill, new Vector3(0,0,0), new Quaternion(0,0,0,0));
                     newSkill.transform.localPosition = SkillAim.transform.position;
                     newSkill.GetComponent<Thunder>().playerMana = player.GetComponent<Mana>(); 
                 }
