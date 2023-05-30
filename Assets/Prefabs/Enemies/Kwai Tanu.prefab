@@ -198,7 +198,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Speed: 20
   animator: {fileID: 6225778430698764785}
-  IsTracking: 1
+  Distancing: 1
 --- !u!114 &6836200651975615416
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -315,6 +315,10 @@ PrefabInstance:
     - target: {fileID: 2417740674062355603, guid: de1b15b79a7e01c45b6b32d7bacbb0d4, type: 3}
       propertyPath: m_Name
       value: Dash
+      objectReference: {fileID: 0}
+    - target: {fileID: 2417740674062355603, guid: de1b15b79a7e01c45b6b32d7bacbb0d4, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3286848170869574127, guid: de1b15b79a7e01c45b6b32d7bacbb0d4, type: 3}
       propertyPath: m_Enabled

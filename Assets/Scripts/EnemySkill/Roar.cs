@@ -17,7 +17,7 @@ public class Roar : SkillCD
         sprite.enabled = false;
     }
     private void Update() {
-        if (Ready)
+        if (Ready && slash.hasTarget)
         {
             StartRoar();
             Use();
@@ -31,12 +31,12 @@ public class Roar : SkillCD
 
     private IEnumerator RoarForSeconds(float waittime)
     {
-        float changeSpeed = movement.Speed;
-        movement.Speed -= changeSpeed;
+        float tmp = movement.Speed;
+        movement.Speed -= tmp;
         slash.enabled = true;
         sprite.enabled = true;
         yield return new WaitForSeconds(waittime);
-        movement.Speed += changeSpeed;
+        movement.Speed += tmp;
         slash.enabled = false;
         sprite.enabled = false;
     }
