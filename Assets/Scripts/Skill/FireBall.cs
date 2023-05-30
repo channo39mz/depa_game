@@ -18,6 +18,7 @@ public class FireBall : CraftingSkill
         Mana playerMana = Player.GetComponent<Mana>();
         var newBullet = Instantiate(spellObject, new Vector3(shootingPoint.position.x,shootingPoint.position.y,0), shootingPoint.rotation);
         newBullet.GetComponent<SpellBullet>().damageSkill = damage;
+        // newBullet.transform.rotation = new Vector3(0,0,90);
         playerMana.decreaseMana(ManaCost);
     }
 }
