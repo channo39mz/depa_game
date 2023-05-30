@@ -5,7 +5,7 @@ using UnityEngine;
 public class Slash : SkillCD
 {
     private GameObject target;
-    private bool hasTarget;
+    public bool hasTarget { get; private set; }
 
     private void Update() {
         if (hasTarget && Ready)

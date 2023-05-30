@@ -7,15 +7,15 @@ public class EnemyMovement : MonoBehaviour
     public float Speed = 1;
     private float curSpeed;
     [SerializeField] private Animator animator;
-    public bool IsTracking = true;
+    public bool Distancing = true;
 
     private void FixedUpdate()
     {
         Aiming aiming = GetComponent<Aiming>();
         curSpeed = Speed;
-        if (IsTracking)
+        if (Distancing)
         {
-            Track();
+            DoDistancing();
         }
         Rigidbody2D rb = GetComponent<Rigidbody2D>();
         rb.velocity = aiming.Direction * Time.fixedDeltaTime * curSpeed;
@@ -23,13 +23,17 @@ public class EnemyMovement : MonoBehaviour
         animator.SetFloat("Vertical", aiming.Direction.y);
     }
 
-    private void Track()
+    private void DoDistancing()
     {
         Tracking tracking = GetComponentInChildren<Tracking>();
         float skillRange = GetComponentsInChildren<CircleCollider2D>()[1].radius;
         if (tracking.Distance <= skillRange)
         {
             curSpeed = 0;
+        }
+        else
+        {
+            curSpeed = Speed;
         }
     }
 }

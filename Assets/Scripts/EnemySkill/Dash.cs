@@ -9,14 +9,12 @@ public class Dash : SkillCD
     private bool hasTarget;
     private Aiming aiming;
     private EnemyMovement movement;
-    private float tmpSpeed;
     private bool isDashing = false;
 
     private void Start()
     {
         aiming = GetComponentInParent<Aiming>();
         movement = GetComponentInParent<EnemyMovement>();
-        tmpSpeed = movement.Speed;
     }
 
     private void Update()
@@ -35,15 +33,15 @@ public class Dash : SkillCD
 
     private IEnumerator DashForSeconds(float time)
     {
-        movement.IsTracking = false;
+        movement.Distancing = false;
         aiming.Lock = true;
-        tmpSpeed = movement.Speed;
+        float tmp = movement.Speed;
         movement.Speed = speed;
         isDashing = true;
         yield return new WaitForSeconds(time);
-        movement.IsTracking = true;
+        movement.Distancing = true;
         aiming.Lock = false;
-        movement.Speed = tmpSpeed;
+        movement.Speed = tmp;
         isDashing = false;
     }
 
