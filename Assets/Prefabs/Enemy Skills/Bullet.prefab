@@ -76,7 +76,7 @@ SpriteRenderer:
   m_SortingLayerID: 2006055355
   m_SortingLayer: 1
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: c050eee78605d21418f2f8ba159f00bc, type: 3}
+  m_Sprite: {fileID: 21300000, guid: c75a17402f8bedd4a94c2fa35002968a, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -99,7 +99,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0bb19ce247a533c44aaeb04465e4797b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hitEffect: {fileID: 4151552334517674694, guid: 74c40904dc9149f459bf3c1cef0e08d1, type: 3}
+  hitEffect: {fileID: 6855314210357232287, guid: 7c2a9b83b809a0848915fabd9596b68b, type: 3}
   hitPlayer: 1
   hitEnemy: 0
   damage: 0

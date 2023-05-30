@@ -45,7 +45,7 @@ public class Bullet : MonoBehaviour
         DamageManager manager = other.gameObject.GetComponent<DamageManager>();
         manager.TakeDamage(damage);
         GameObject effect = Instantiate(hitEffect, transform.position, Quaternion.identity);
-        Destroy(effect, 0.5f);
+        GetComponent<SpriteRenderer>().enabled = false;
     }
 
    
