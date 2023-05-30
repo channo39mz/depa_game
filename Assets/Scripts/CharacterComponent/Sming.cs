@@ -6,17 +6,17 @@ using System.Threading.Tasks;
 public class Sming : MonoBehaviour
 {
     private Vector3 moveDirection;
-    [SerializeField] private SmingSkills skills;
     [SerializeField] private bool isTiger = true;
+    public SmingSkills skills;
 
     private void Start()
     {
+        skills.Buff = GetComponentInChildren<Buff>(true).gameObject;
+        skills.Dash = GetComponentInChildren<Dash>(true).gameObject;
+        skills.Roar = GetComponentInChildren<Roar>(true).gameObject;
+        skills.Slash = GetComponentInChildren<Slash>(true).gameObject;
+        skills.Shooting = GetComponentInChildren<Shooting>(true).gameObject;
         StartCoroutine(DoActionForSeconds(10));
-    }
-
-    async void AttackCoolDown(int times)
-    {
-        await Task.Delay(times);
     }
 
     public void RandomAction()
@@ -31,7 +31,7 @@ public class Sming : MonoBehaviour
                 Debug.Log("1");
                 if (isTiger)
                 {
-                    skills.Melee.SetActive(true);
+                    skills.Slash.SetActive(true);
                     skills.Buff.SetActive(true);
                 }
                 else
@@ -45,7 +45,7 @@ public class Sming : MonoBehaviour
                 Debug.Log("2");
                 if (isTiger)
                 {
-                    skills.Melee.SetActive(true);
+                    skills.Slash.SetActive(true);
                     GameObject[] player = GameObject.FindGameObjectsWithTag("Player");
                     gameObject.transform.position = new Vector2(player[0].transform.position.x - 1, player[0].transform.position.y - 1);
                 }
@@ -72,7 +72,7 @@ public class Sming : MonoBehaviour
                 // transform to human
                 Debug.Log("4");
                 isTiger = false;
-                skills.Gun.SetActive(true);
+                skills.Shooting.SetActive(true);
                 break;
             case 5:
                 // transform to tiger
@@ -84,7 +84,7 @@ public class Sming : MonoBehaviour
                 // charm
                 Debug.Log("6");
                 isTiger = false;
-                skills.Gun.SetActive(true);
+                skills.Shooting.SetActive(true);
                 break;
         }
     }
