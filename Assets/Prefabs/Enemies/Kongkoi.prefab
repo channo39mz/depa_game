@@ -198,7 +198,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Speed: 20
   animator: {fileID: 1820407702677374835}
-  IsTracking: 1
+  Distancing: 1
 --- !u!114 &781104751747931260
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -228,11 +228,11 @@ MonoBehaviour:
   - group:
     - {fileID: 4313967038534207088, guid: 4d823d6645c9b8e4eab8cd5080c286c0, type: 3}
     rate: 1
-    quantity: 1
-  - group:
-    - {fileID: 5239020511620401537, guid: 0653e366e49d0cd43960644e5ca53fc0, type: 3}
-    rate: 1
     quantity: 2
+  - group:
+    - {fileID: 2716128144899098752, guid: 0ab5a4d300226e643a12162e37f794d1, type: 3}
+    rate: 0.5
+    quantity: 1
 --- !u!95 &1820407702677374835
 Animator:
   serializedVersion: 4

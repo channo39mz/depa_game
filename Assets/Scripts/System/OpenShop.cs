@@ -15,7 +15,6 @@ public class OpenShop : MonoBehaviour
             {
                 windowShop.SetActive(true);
                 windowActive = true;
-                Debug.Log("Open Shop");
             }
             else
             {

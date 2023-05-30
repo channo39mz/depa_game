@@ -5917,7 +5917,7 @@ GameObject:
   - component: {fileID: 1135769296}
   m_Layer: 0
   m_Name: EventSystem
-  m_TagString: Untagged
+  m_TagString: Event
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -7949,6 +7949,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 2
   move: {fileID: -3969963729023701431, guid: 7dba62102da431d4a92788bd53fd70c2, type: 3}
+  trail: {fileID: 0}
+  dashSpeed: 0
+  dashLength: 0
   animator: {fileID: 0}
 --- !u!114 &1670411584
 MonoBehaviour:
