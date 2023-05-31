@@ -429,6 +429,7 @@
 "Assets/Scripts/EnemySkill/Tracking.cs"
 "Assets/Scripts/Player/PickUpItem.cs"
 "Assets/Scripts/Player/PlayerCoins.cs"
+"Assets/Scripts/Player/WeaponRotate.cs"
 "Assets/Scripts/Skill/FireBall.cs"
 "Assets/Scripts/Skill/FireBall/BoomEffect.cs"
 "Assets/Scripts/Skill/HealInstance.cs"
