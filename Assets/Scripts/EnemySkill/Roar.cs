@@ -8,6 +8,24 @@ public class Roar : SkillCD
     private EnemyMovement movement;
     private Slash slash;
     private SpriteRenderer sprite;
+    private Animator animator;
+    private bool isRoaring;
+    public bool IsRoaring
+    {
+        get => isRoaring;
+        private set
+        {
+            isRoaring = value;
+            if (value)
+            {
+                animator.SetBool("IsRoaring", true);
+            }
+            else
+            {
+                animator.SetBool("IsRoaring", false);
+            }
+        }
+    }
 
     private void Start() {
         movement = GetComponentInParent<EnemyMovement>();
@@ -15,6 +33,7 @@ public class Roar : SkillCD
         slash.enabled = false;
         sprite = GetComponent<SpriteRenderer>();
         sprite.enabled = false;
+        animator = GetComponentInParent<Animator>();
     }
     private void Update() {
         if (Ready && slash.hasTarget)
@@ -35,9 +54,11 @@ public class Roar : SkillCD
         movement.Speed -= tmp;
         slash.enabled = true;
         sprite.enabled = true;
+        IsRoaring = true;
         yield return new WaitForSeconds(waittime);
         movement.Speed += tmp;
         slash.enabled = false;
         sprite.enabled = false;
+        IsRoaring = false;
     }
 }
