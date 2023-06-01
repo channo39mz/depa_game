@@ -9,23 +9,24 @@ public class ShopManager : MonoBehaviour
 {
     public Canvas Canvas { get; private set; }
     [SerializeField] private Shop shop;
-
+    [SerializeField] private Button[] buttons;
     private void Start()
     {
         shop.NewOrder(3);
         Canvas = GetComponentInChildren<Canvas>();
-        Button[] buttons = Canvas.GetComponentsInChildren<Button>();
-        for (int i = 0; i < buttons.Length; i+=2)
+        // Button[] buttons = Canvas.GetComponentsInChildren<Button>();
+        for (int i = 0; i < buttons.Length; i++)
         {
-            int shopOrder = i/2;
-            CraftingSkill skill = shop.Order[shopOrder];
+            // int shopOrder = i/2;
+            CraftingSkill skill = shop.Order[i];
             Image icon = buttons[i].gameObject.GetComponentsInChildren<Image>()[1];
             TMP_Text coinText = buttons[i].gameObject.GetComponentsInChildren<Image>()[2].GetComponentInChildren<TMP_Text>();
             Image ingredient1 = buttons[i].gameObject.GetComponentsInChildren<Image>()[3];
             Image ingredient2 = buttons[i].gameObject.GetComponentsInChildren<Image>()[4];
-            Image skillInfo = buttons[i].gameObject.GetComponentsInChildren<Image>()[5];
+            Image skillInfo =  buttons[i].gameObject.GetComponentsInChildren<Image>()[5];
+            Debug.Log(skillInfo.gameObject);
 
-            icon.sprite = shop.Order[shopOrder].image;
+            icon.sprite = shop.Order[i].image;
             
             coinText.text = string.Format("X {0}",skill.Ingredients.getCoin());
             //Skill info 1
@@ -34,7 +35,7 @@ public class ShopManager : MonoBehaviour
 
                 TMP_Text ingredientsCount1 = ingredient1.GetComponentInChildren<TMP_Text>();
 
-                ingredient1.sprite = shop.Order[shopOrder].Ingredients.getListItems()[0].Item.image;
+                ingredient1.sprite = shop.Order[i].Ingredients.getListItems()[0].Item.image;
                 ingredientsCount1.text = string.Format("X {0}",skill.Ingredients.getListItems()[0].Quantity);
             }
             else{
@@ -47,7 +48,7 @@ public class ShopManager : MonoBehaviour
 
                 TMP_Text ingredientsCount2 = ingredient2.GetComponentInChildren<TMP_Text>();
 
-                ingredient2.sprite = shop.Order[shopOrder].Ingredients.getListItems()[1].Item.image;
+                ingredient2.sprite = shop.Order[i].Ingredients.getListItems()[1].Item.image;
                 ingredientsCount2.text = string.Format("X {0}",skill.Ingredients.getListItems()[1].Quantity);
             }
             else{
@@ -55,9 +56,10 @@ public class ShopManager : MonoBehaviour
             }
 
             //Info Skill
-            if(shop.Order[shopOrder].imageInfo != null){
+            if(shop.Order[i].imageInfo != null){
                 skillInfo.sprite = skill.imageInfo;
             }
+            skillInfo.gameObject.SetActive(false);
         }
     }
 

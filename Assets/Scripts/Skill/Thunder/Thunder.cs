@@ -27,9 +27,10 @@ public class Thunder : CraftingSkill
             thunderSprite.transform.position = canvas.gameObject.transform.position;
             thunderSprite.gameObject.SetActive(true);
             thunderSprite.GetComponent<Animator>().SetTrigger("Trigger");
+            thunderSprite.GetComponent<AudioSource>().Play();
             canvas.gameObject.SetActive(false);
             playerMana.decreaseMana(ManaCost);
-            Destroy(this.gameObject,0.5f);
+            Destroy(this.gameObject,1f);
         }
 
         if(Input.GetKeyDown(KeyCode.Q)){

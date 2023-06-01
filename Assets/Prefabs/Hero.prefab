@@ -7124,7 +7124,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 02d39aab7e1ace240bf66ba683359b2e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  weapon: {fileID: 7153957153556561294, guid: 01f08f5b312abf64e8f4cca9e12565f0, type: 3}
+  weapon: {fileID: 7374378743067472492, guid: ab69076ba764c9f43a5efe8451a018ec, type: 3}
   playerMana: {fileID: 5242274570586132499}
   playerWeapon: {fileID: 5242274570593847239}
 --- !u!114 &5242274570586132501

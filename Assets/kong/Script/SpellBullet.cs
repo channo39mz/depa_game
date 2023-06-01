@@ -28,11 +28,17 @@ public class SpellBullet : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D collision){
         if(collision.gameObject.tag == "Enemy" || collision.gameObject.tag == "Wall"){
             var newChild = Instantiate(child,this.transform.position,this.transform.rotation);
+            //Bomb sound
+            newChild.GetComponent<AudioSource>().Play();
+            //Set damage to bomb effect
             newChild.GetComponent<BoomEffect>().damageSkill = damageSkill;
             newChild.SetActive(true);
+
+            //Animation
             newChild.GetComponent<Animator>().SetTrigger("Trigger");
+
             Destroy(gameObject);
-            Destroy(newChild,0.5f);
+            Destroy(newChild,1f);
         }
     }
 

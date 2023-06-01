@@ -24,12 +24,15 @@ public class WeaponAttack : MonoBehaviour
         weapon = getWeapon;
         delay = weapon.GetComponent<Weapon>().cooldown;
     }
+    //Press Left mouse button
     public void OnAttack(){
         if(!IsCD){
             cloneWeapon = Instantiate(weapon,playerWeapon.transform.position,playerWeapon.transform.rotation);
             cloneWeapon.transform.SetParent(playerWeapon.transform);
             cloneWeapon.GetComponent<Weapon>().playerMana = playerMana;
             cloneWeapon.GetComponent<Weapon>().OnAttack();
+
+            cloneWeapon.GetComponent<AudioSource>().Play();
             StartCoroutine(DelayAttack());
         }
         IsCD = true;

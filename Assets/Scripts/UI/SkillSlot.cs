@@ -13,17 +13,12 @@ public class SkillSlot : MonoBehaviour
         playerCast = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerSkillCast>();
         RefreshSlots(0);
     }
-
-    void Update(){
-    }
-
     public void RunAnimation(){
         skillSlotsAnimation.SetTrigger("Swap");
     }
     public void RefreshSlots(float state){
         GameObject[] playerSkill = playerCast.getSkill();
         if(playerSkill[(int) state] != null){
-            // specialSlot.GetComponent<Image>().enabled = true;
             specialSlot.SetActive(true);
             specialSlot.GetComponent<Image>().sprite = playerSkill[(int) state].GetComponent<CraftingSkill>().image;
         }
