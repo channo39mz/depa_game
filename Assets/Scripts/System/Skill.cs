@@ -9,4 +9,5 @@ public class Skill : MonoBehaviour
     [SerializeField] private string description;
     public string Description { get => description; }
     public Sprite image;
+    public Sprite imageInfo;
 }

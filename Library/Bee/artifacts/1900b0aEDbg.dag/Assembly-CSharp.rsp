@@ -438,6 +438,7 @@
 "Assets/Scripts/Skill/Thunder/Thunder.cs"
 "Assets/Scripts/Skill/Thunder/ThunderSpell.cs"
 "Assets/Scripts/System/CraftingSkill.cs"
+"Assets/Scripts/System/InfoPress.cs"
 "Assets/Scripts/System/Ingredients.cs"
 "Assets/Scripts/System/Item.cs"
 "Assets/Scripts/System/ItemCatalog.cs"
