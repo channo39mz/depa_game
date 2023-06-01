@@ -18,40 +18,45 @@ public class ShopManager : MonoBehaviour
         for (int i = 0; i < buttons.Length; i+=2)
         {
             int shopOrder = i/2;
-            
-            buttons[i].gameObject.GetComponentsInChildren<Image>()[1].sprite = shop.Order[shopOrder].image;
-            
+            CraftingSkill skill = shop.Order[shopOrder];
+            Image icon = buttons[i].gameObject.GetComponentsInChildren<Image>()[1];
             TMP_Text coinText = buttons[i].gameObject.GetComponentsInChildren<Image>()[2].GetComponentInChildren<TMP_Text>();
-            coinText.text = string.Format("X {0}",shop.Order[shopOrder].Ingredients.getCoin());
+            Image ingredient1 = buttons[i].gameObject.GetComponentsInChildren<Image>()[3];
+            Image ingredient2 = buttons[i].gameObject.GetComponentsInChildren<Image>()[4];
+            Image skillInfo = buttons[i].gameObject.GetComponentsInChildren<Image>()[5];
+
+            icon.sprite = shop.Order[shopOrder].image;
+            
+            coinText.text = string.Format("X {0}",skill.Ingredients.getCoin());
             //Skill info 1
-            if(shop.Order[shopOrder].Ingredients.getListItems()[0] != null){
-                buttons[i].gameObject.GetComponentsInChildren<Image>()[3].enabled = true;
+            if(skill.Ingredients.getListItems()[0] != null){
+                ingredient1.enabled = true;
 
-                TMP_Text ingredientsCount1 = buttons[i].gameObject.GetComponentsInChildren<Image>()[3].GetComponentInChildren<TMP_Text>();
+                TMP_Text ingredientsCount1 = ingredient1.GetComponentInChildren<TMP_Text>();
 
-                buttons[i].gameObject.GetComponentsInChildren<Image>()[3].sprite = shop.Order[shopOrder].Ingredients.getListItems()[0].Item.image;
-                ingredientsCount1.text = string.Format("X {0}",shop.Order[shopOrder].Ingredients.getListItems()[0].Quantity);
+                ingredient1.sprite = shop.Order[shopOrder].Ingredients.getListItems()[0].Item.image;
+                ingredientsCount1.text = string.Format("X {0}",skill.Ingredients.getListItems()[0].Quantity);
             }
             else{
-                buttons[i].gameObject.GetComponentsInChildren<Image>()[3].enabled = false;
+                ingredient1.enabled = false;
             }
 
             //Skill info 2
-            if(shop.Order[shopOrder].Ingredients.getListItems()[1] != null){
-                buttons[i].gameObject.GetComponentsInChildren<Image>()[4].enabled = true;
+            if(skill.Ingredients.getListItems()[1] != null){
+                ingredient2.enabled = true;
 
-                TMP_Text ingredientsCount1 = buttons[i].gameObject.GetComponentsInChildren<Image>()[4].GetComponentInChildren<TMP_Text>();
+                TMP_Text ingredientsCount2 = ingredient2.GetComponentInChildren<TMP_Text>();
 
-                buttons[i].gameObject.GetComponentsInChildren<Image>()[4].sprite = shop.Order[shopOrder].Ingredients.getListItems()[1].Item.image;
-                ingredientsCount1.text = string.Format("X {0}",shop.Order[shopOrder].Ingredients.getListItems()[1].Quantity);
+                ingredient2.sprite = shop.Order[shopOrder].Ingredients.getListItems()[1].Item.image;
+                ingredientsCount2.text = string.Format("X {0}",skill.Ingredients.getListItems()[1].Quantity);
             }
             else{
-                buttons[i].gameObject.GetComponentsInChildren<Image>()[4].enabled = false;
+                ingredient2.enabled = false;
             }
 
             //Info Skill
             if(shop.Order[shopOrder].imageInfo != null){
-                buttons[i].gameObject.GetComponentsInChildren<Image>()[5].sprite = shop.Order[shopOrder].imageInfo;
+                skillInfo.sprite = skill.imageInfo;
             }
         }
     }
