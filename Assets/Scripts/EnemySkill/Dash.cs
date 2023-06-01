@@ -6,15 +6,51 @@ public class Dash : SkillCD
 {
     [SerializeField] private float time = 1;
     [SerializeField] private float speed = 5;
+    [SerializeField] private float chargingTime = 1;
     private bool hasTarget;
     private Aiming aiming;
     private EnemyMovement movement;
-    private bool isDashing = false;
+    private Animator animator;
+    private bool isDashing;
+    public bool IsDashing
+    {
+        get => isDashing;
+        private set
+        {
+            isDashing = value;
+            if (value)
+            {
+                animator.SetBool("IsDashing", true);
+            }
+            else
+            {
+                animator.SetBool("IsDashing", false);
+            }
+        }
+    }
+    private bool isCharging;
+    public bool IsCharging
+    {
+        get => isCharging;
+        private set
+        {
+            isCharging = value;
+            if (value)
+            {
+                animator.SetBool("IsCharging", true);
+            }
+            else
+            {
+                animator.SetBool("IsCharging", false);
+            }
+        }
+    }
 
     private void Start()
     {
         aiming = GetComponentInParent<Aiming>();
         movement = GetComponentInParent<EnemyMovement>();
+        animator = GetComponentInParent<Animator>();
     }
 
     private void Update()
@@ -22,27 +58,31 @@ public class Dash : SkillCD
         if (Ready && hasTarget)
         {
             DashAttack();
-            Use();
         }
     }
 
     private void DashAttack()
     {
-        StartCoroutine(DashForSeconds(time));
+        StartCoroutine(DashForSeconds());
     }
 
-    private IEnumerator DashForSeconds(float time)
+    private IEnumerator DashForSeconds()
     {
+        float tmp = movement.Speed;
+        movement.Speed = 0;
+        IsCharging = true;
+        yield return new WaitForSeconds(chargingTime);
+        IsCharging = false;
+        Use();
         movement.Distancing = false;
         aiming.Lock = true;
-        float tmp = movement.Speed;
         movement.Speed = speed;
-        isDashing = true;
+        IsDashing = true;
         yield return new WaitForSeconds(time);
         movement.Distancing = true;
         aiming.Lock = false;
         movement.Speed = tmp;
-        isDashing = false;
+        IsDashing = false;
     }
 
     private void OnTriggerStay2D(Collider2D other)
@@ -64,11 +104,11 @@ public class Dash : SkillCD
     private void OnCollisionEnter2D(Collision2D other)
     {
         
-        if (other.gameObject.tag == "Player" && isDashing)
+        if (other.gameObject.tag == "Player" && IsDashing)
         {
             float damage = GetComponentInParent<AttackPower>().Atk;
             other.gameObject.GetComponent<DamageManager>().TakeDamage(damage);
-            isDashing = false;
+            IsDashing = false;
         }
     }
 }
