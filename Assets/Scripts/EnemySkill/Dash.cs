@@ -58,6 +58,7 @@ public class Dash : SkillCD
         if (Ready && hasTarget)
         {
             DashAttack();
+            Use();
         }
     }
 
@@ -73,7 +74,6 @@ public class Dash : SkillCD
         IsCharging = true;
         yield return new WaitForSeconds(chargingTime);
         IsCharging = false;
-        Use();
         movement.Distancing = false;
         aiming.Lock = true;
         movement.Speed = speed;

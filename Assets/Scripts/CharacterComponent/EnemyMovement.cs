@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class EnemyMovement : MonoBehaviour
 {
-    public float Speed = 1;
+    public float Speed = 20;
     private float curSpeed;
     [SerializeField] private Animator animator;
     public bool Distancing = true;
