@@ -234,6 +234,10 @@ MonoBehaviour:
     - {fileID: 4313967038534207088, guid: 4d823d6645c9b8e4eab8cd5080c286c0, type: 3}
     rate: 1
     quantity: 30
+  - group:
+    - {fileID: 4313967038534207088, guid: 4d823d6645c9b8e4eab8cd5080c286c0, type: 3}
+    rate: 1
+    quantity: 30
 --- !u!95 &223817202
 Animator:
   serializedVersion: 4
@@ -400,9 +404,45 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1687299549314444419, guid: eb11ca48645a75542b69a1d0359b57f6, type: 3}
+      propertyPath: roaringPrefab
+      value: 
+      objectReference: {fileID: 8299285337069883256, guid: c8ac72de0f1ac12448ccee1f143527e3, type: 3}
     - target: {fileID: 1687299549314444444, guid: eb11ca48645a75542b69a1d0359b57f6, type: 3}
       propertyPath: maxCD
       value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1687299549314444445, guid: eb11ca48645a75542b69a1d0359b57f6, type: 3}
+      propertyPath: m_Radius
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1687299549314444447, guid: eb11ca48645a75542b69a1d0359b57f6, type: 3}
+      propertyPath: m_Size.x
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 1687299549314444447, guid: eb11ca48645a75542b69a1d0359b57f6, type: 3}
+      propertyPath: m_Size.y
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 1687299549314444447, guid: eb11ca48645a75542b69a1d0359b57f6, type: 3}
+      propertyPath: m_Color.a
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1687299549314444447, guid: eb11ca48645a75542b69a1d0359b57f6, type: 3}
+      propertyPath: m_Color.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1687299549314444447, guid: eb11ca48645a75542b69a1d0359b57f6, type: 3}
+      propertyPath: m_Color.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1687299549314444447, guid: eb11ca48645a75542b69a1d0359b57f6, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1687299549314444447, guid: eb11ca48645a75542b69a1d0359b57f6, type: 3}
+      propertyPath: m_DrawMode
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: eb11ca48645a75542b69a1d0359b57f6, type: 3}
@@ -428,7 +468,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 468157209417222282, guid: 34d1db8ea5473d146bd96c85d9e52031, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 468157209417222283, guid: 34d1db8ea5473d146bd96c85d9e52031, type: 3}
       propertyPath: m_RootOrder

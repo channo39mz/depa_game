@@ -5,6 +5,8 @@ using UnityEngine;
 public class Roar : SkillCD
 {
     [SerializeField] private float time = 5;
+    [SerializeField] private GameObject roaringPrefab;
+    private GameObject roaringEffect;
     private EnemyMovement movement;
     private Slash slash;
     private SpriteRenderer sprite;
@@ -19,10 +21,12 @@ public class Roar : SkillCD
             if (value)
             {
                 animator.SetBool("IsRoaring", true);
+                roaringEffect.SetActive(true);
             }
             else
             {
                 animator.SetBool("IsRoaring", false);
+                roaringEffect.SetActive(false);
             }
         }
     }
@@ -34,6 +38,8 @@ public class Roar : SkillCD
         sprite = GetComponent<SpriteRenderer>();
         sprite.enabled = false;
         animator = GetComponentInParent<Animator>();
+        roaringEffect = Instantiate(roaringPrefab, transform.parent);
+        roaringEffect.SetActive(false);
     }
     private void Update() {
         if (Ready && slash.hasTarget)
