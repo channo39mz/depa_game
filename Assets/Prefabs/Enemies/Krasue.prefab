@@ -228,7 +228,7 @@ MonoBehaviour:
   - group:
     - {fileID: 4313967038534207088, guid: 4d823d6645c9b8e4eab8cd5080c286c0, type: 3}
     rate: 1
-    quantity: 2
+    quantity: 3
   - group:
     - {fileID: 5239020511620401537, guid: 0653e366e49d0cd43960644e5ca53fc0, type: 3}
     rate: 0.5
