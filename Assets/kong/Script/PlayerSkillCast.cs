@@ -8,7 +8,6 @@ using TMPro;
 public class PlayerSkillCast : MonoBehaviour
 {
     [SerializeField] private GameObject[] SkillSlot;
-    [SerializeField] private TMP_Text SkillText;
     [SerializeField] private GameObject SkillAim;
     [SerializeField] private SkillSlot UISkillSlots;
     public GameObject player;

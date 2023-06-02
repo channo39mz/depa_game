@@ -2098,7 +2098,7 @@ TrailRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 0}
+  - {fileID: 2100000, guid: 7cd73ef8e5a31a244a672ae32c0f6ddb, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -2119,7 +2119,7 @@ TrailRenderer:
   m_SortingLayerID: 53303017
   m_SortingLayer: 4
   m_SortingOrder: 0
-  m_Time: 0.5
+  m_Time: 0.2
   m_Parameters:
     serializedVersion: 3
     widthMultiplier: 1
@@ -2127,8 +2127,8 @@ TrailRenderer:
       serializedVersion: 2
       m_Curve:
       - serializedVersion: 3
-        time: 0.0000014826655
-        value: 0.37718895
+        time: 0
+        value: 1
         inSlope: 0
         outSlope: 0
         tangentMode: 0
@@ -2137,7 +2137,7 @@ TrailRenderer:
         outWeight: 0.33333334
       - serializedVersion: 3
         time: 1
-        value: 0
+        value: 0.35087585
         inSlope: 0
         outSlope: 0
         tangentMode: 0
@@ -7124,7 +7124,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 02d39aab7e1ace240bf66ba683359b2e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  weapon: {fileID: 7153957153556561294, guid: 01f08f5b312abf64e8f4cca9e12565f0, type: 3}
+  weapon: {fileID: 7374378743067472492, guid: ab69076ba764c9f43a5efe8451a018ec, type: 3}
   playerMana: {fileID: 5242274570586132499}
   playerWeapon: {fileID: 5242274570593847239}
 --- !u!114 &5242274570586132501
