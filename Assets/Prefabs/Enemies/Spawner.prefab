@@ -101,3 +101,5 @@ MonoBehaviour:
   - {fileID: 1820407702677374836, guid: 15a1c921e62a4c64da82ef170e96c4dc, type: 3}
   - {fileID: 5054467357154061895, guid: 18cb6d8f065e86547be2a579916b4df3, type: 3}
   - {fileID: 6225778430698764557, guid: 54cba4b38b0e46a428f0f64a0b0f08b0, type: 3}
+  quantity: 1
+  rate: 1
